@@ -16,6 +16,7 @@ refactorerl-0.9.14.09/refactorerl.script
 .eunit
 deps
 *.o
+*.so
 *.beam
 *.plt
 erl_crash.dump

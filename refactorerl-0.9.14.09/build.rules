@@ -344,7 +344,7 @@ OTPVersion = case string:to_integer(string:sub_string(OTPRelease, 1, 1)) of
 		  {true, _} ->
 		      Cmd = "g++ -Wall -fPIC -O3 " ++
 			  case os:type() of
-			      {unix, darwin} -> "-undefined dynamic_lookup -dynamiclib ";
+			      {unix, darwin} -> "-undefined dynamic_lookup -dynamiclib -std=c++11 -stdlib=libc++";
 			      _ -> "-shared "
 			  end ++
 			  " -I " ++ join([code:root_dir(), "usr", "include"]) ++
