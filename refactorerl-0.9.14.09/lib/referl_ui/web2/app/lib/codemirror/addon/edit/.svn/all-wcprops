@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit
+END
+matchbrackets.js
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/matchbrackets.js
+END
+matchtags.js
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/matchtags.js
+END
+continuelist.js
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/continuelist.js
+END
+closetag.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/closetag.js
+END
+closebrackets.js
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/closebrackets.js
+END
+trailingspace.js
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/edit/trailingspace.js
+END

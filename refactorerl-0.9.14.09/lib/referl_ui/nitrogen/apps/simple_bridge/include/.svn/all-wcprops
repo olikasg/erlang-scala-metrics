@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/include
+END
+yaws_api.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/include/yaws_api.hrl
+END
+httpd_r12b5.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/include/httpd_r12b5.hrl
+END
+simple_bridge.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/include/simple_bridge.hrl
+END

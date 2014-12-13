@@ -1,0 +1,437 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src
+END
+refusr_predef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_predef.erl
+END
+refusr_cyclic_mod.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_cyclic_mod.erl
+END
+reftr_apply_funcluster.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_apply_funcluster.erl
+END
+refusr_clone_identifierl.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl.erl
+END
+refusr_m_lexer.xrl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_m_lexer.xrl
+END
+refusr_cyclic_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_cyclic_fun.erl
+END
+refusr_clone_identifierl_tlexprs_clones_with_cache.erl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_tlexprs_clones_with_cache.erl
+END
+reftr_rename_recfield.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_recfield.erl
+END
+reftr_upgrade_iface.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_upgrade_iface.erl
+END
+reftr_extract_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_extract_fun.erl
+END
+reftr_genspec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_genspec.erl
+END
+reftr_rename_unused_vars.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_unused_vars.erl
+END
+reftr_introduce_rec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_introduce_rec.erl
+END
+reftr_expand_funexpr.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_expand_funexpr.erl
+END
+refusr_skeletons.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_skeletons.erl
+END
+refusr_sq_lib.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_sq_lib.erl
+END
+reftr_inline_mac.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_inline_mac.erl
+END
+refusr_igraph.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_igraph.erl
+END
+reftr_move_rec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_move_rec.erl
+END
+reftr_merge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_merge.erl
+END
+reftr_rename_rec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_rec.erl
+END
+reftr_eliminate_import.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_eliminate_import.erl
+END
+refusr_clone_identifierl_suffix_tree.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_suffix_tree.erl
+END
+reftr_rename_mod.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_mod.erl
+END
+reftr_rename_overloaded_funs.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_overloaded_funs.erl
+END
+refusr_ac_parser.yrl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_ac_parser.yrl
+END
+reftr_gen.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_gen.erl
+END
+refusr_deadcode.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_deadcode.erl
+END
+refusr_lib_relations.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_lib_relations.hrl
+END
+reftr_move_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_move_fun.erl
+END
+reftr_rename_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_fun.erl
+END
+reftr_rename_var.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_var.erl
+END
+refusr_sq_format.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_sq_format.erl
+END
+reftr_rename_header.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_header.erl
+END
+refusr_fb_regexp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_fb_regexp.erl
+END
+refusr_clone_identifierl_metrics.erl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_metrics.erl
+END
+refusr_sq_lexer.xrl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_sq_lexer.xrl
+END
+reftr_list_comp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_list_comp.erl
+END
+reftr_query_badsmells.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_query_badsmells.erl
+END
+refusr_fb_relations.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_fb_relations.erl
+END
+refusr_smart_graph.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_smart_graph.erl
+END
+reftr_elim_var.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_elim_var.erl
+END
+refusr_layer.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_layer.erl
+END
+reftr_tuple_funpar.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_tuple_funpar.erl
+END
+refusr_clone_identifierl.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl.hrl
+END
+reftr_move.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_move.erl
+END
+refusr_sq.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_sq.erl
+END
+reftr_rename.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename.erl
+END
+refusr_dir_sort.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_dir_sort.erl
+END
+sq_lib.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/sq_lib.hrl
+END
+reftr_reorder_funpar.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_reorder_funpar.erl
+END
+refusr_clone_identifierl_filtered_suffix_tree.erl
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_filtered_suffix_tree.erl
+END
+referl_user.appspec
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/referl_user.appspec
+END
+reftr_move_mac.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_move_mac.erl
+END
+reftr_introduce_import.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_introduce_import.erl
+END
+reftr_rename_mac.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_rename_mac.erl
+END
+refusr_clone_identifierl_lib.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_lib.erl
+END
+reftr_database_posmode_convert.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_database_posmode_convert.erl
+END
+refusr_metrics.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_metrics.erl
+END
+spec.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/spec.hrl
+END
+refusr_clone_identifierl_matrixfilter.erl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_matrixfilter.erl
+END
+reftr_upgrade_regexp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_upgrade_regexp.erl
+END
+refusr_ac.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_ac.erl
+END
+refusr_strm.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_strm.erl
+END
+refusr_lib_relations.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_lib_relations.erl
+END
+reftr_funapp_to_proc.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_funapp_to_proc.erl
+END
+refusr_clone_identifierl_funcls_clones.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_funcls_clones.erl
+END
+user.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/user.hrl
+END
+refusr_m_parser.yrl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_m_parser.yrl
+END
+refusr_clone_identifierl_candidates.erl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_candidates.erl
+END
+reftr_inline_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_user/src/reftr_inline_fun.erl
+END
+refusr_clone_identifierl_tlexprs_clones.erl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_user/src/refusr_clone_identifierl_tlexprs_clones.erl
+END

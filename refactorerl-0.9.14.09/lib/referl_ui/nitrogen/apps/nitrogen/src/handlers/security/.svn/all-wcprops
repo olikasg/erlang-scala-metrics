@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/security
+END
+default_security_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/security/default_security_handler.erl
+END
+security_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/security/security_handler.erl
+END
+http_basic_auth_security_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/security/http_basic_auth_security_handler.erl
+END

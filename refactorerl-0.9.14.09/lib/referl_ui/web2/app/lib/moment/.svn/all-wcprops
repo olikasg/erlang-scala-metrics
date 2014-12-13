@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment
+END
+component.json
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/component.json
+END
+moment.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/moment.js
+END
+moment.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/moment.min.js
+END
+langs.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/langs.js
+END
+langs.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/langs.min.js
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/LICENSE
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/moment/package.json
+END

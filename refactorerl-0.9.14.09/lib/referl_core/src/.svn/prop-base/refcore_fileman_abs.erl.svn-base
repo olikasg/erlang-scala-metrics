@@ -1,0 +1,59 @@
+K 13
+svn:eol-style
+V 6
+native
+K 12
+svn:keywords
+V 3
+Rev
+K 13
+svn:mergeinfo
+V 3893
+/branches/budail/cluster/tool/lib/referl_core/src/refcore_fileman_abs.erl:9347-9608
+/branches/budail/web2/trunk/tool/lib/referl_core/src/refcore_fileman_abs.erl:9825-10004
+/branches/fordosv/dup_code/tool/lib/referl_core/src/refcore_fileman_abs.erl:9314-10105
+/branches/fordosv/queries/tool/lib/referl_core/src/refcore_fileman.erl:6474-6598,6722-6891
+/branches/fordosv/skeleton/tool/lib/referl_core/src/refcore_fileman.erl:7085-7321
+/branches/fordosv/sq/tool/lib/referl_core/src/refcore_fileman_abs.erl:8664-8730
+/branches/fordosv/tool/lib/referl_core/src/refcore_fileman.erl:5896-6459
+/branches/fordosv/ui_router/tool/lib/referl_core/src/refcore_fileman.erl:6837-7171
+/branches/fordosv/ui_router/tool/lib/referl_core/src/refcore_fileman_abs.erl:8648-8701
+/branches/fordosv/web2/tool/lib/referl_core/src/refcore_fileman_abs.erl:10147-10527
+/branches/fordosv/yaws/tool/lib/referl_core/src/refcore_fileman.erl:7966-8185
+/branches/fszandi/db_compare/tool/lib/referl_core/src/refcore_fileman_abs.erl:7711-8894
+/branches/fszandi/db_hash_table/lib/referl_core/src/refcore_fileman_abs.erl:9054-9081
+/branches/fszandi/sq/tool/lib/referl_core/src/refcore_fileman_abs.erl:9416-10313
+/branches/gabre/emacs/tool/lib/referl_core/src/refcore_fileman_abs.erl:8692-8847
+/branches/gabre/lc_tool/trunk/tool/lib/referl_core/src/refcore_fileman_abs.erl:8890-9004
+/branches/gabre/wx_dev/tool/lib/referl_core/src/refcore_fileman_abs.erl:10089-10100
+/branches/gabre/wx_tool/trunk/tool/lib/referl_core/src/refcore_fileman_abs.erl:9208-10055
+/branches/htamas/investigations/lib/referl_core/src/refcore_fileman_abs.erl:8749-8810
+/branches/htamas/new_nitrogen/lib/referl_core/src/refcore_fileman_abs.erl:8728-8733
+/branches/htamas/newweb/lib/referl_core/src/refcore_fileman_abs.erl:8992-9039
+/branches/htamas/weberrors/lib/referl_core/src/refcore_fileman_abs.erl:8978-9036
+/branches/htomi/lib/referl_core/src/refcore_fileman_abs.erl:9256-9817
+/branches/kitlei/parallelly_executed_queries/tool/lib/referl_core/src/refcore_fileman.erl:5835-6419
+/branches/kutim/qt/trunk/tool/lib/referl_core/src/refcore_fileman_abs.erl:10799-12297
+/branches/lovei/anal/refcore_fileman.erl:3914-4113
+/branches/olikas/autocomplete2/tool/lib/referl_core/src/refcore_fileman.erl:5869-6241
+/branches/olikas/emacs/lib/referl_core/src/refcore_fileman.erl:7965-8203
+/branches/olikas/type/trunk/tool/lib/referl_core/src/refcore_fileman.erl:5901-7450
+/branches/otisonoza/smart_graph/tool/lib/referl_core/src/refcore_fileman_abs.erl:9139-9272
+/branches/pasztorm/sq_csop/tool/lib/referl_core/src/refcore_fileman_abs.erl:10463-10584
+/branches/peterid/anal_type_spec/tool/lib/referl_core/src/refcore_fileman_abs.erl:10300-10566
+/branches/poora/sq_variables/tool/lib/referl_core/src/refcore_fileman_abs.erl:10478-12344
+/branches/poora/sq_variables_adv/tool/lib/referl_core/src/refcore_fileman_abs.erl:11419,11889
+/branches/process_com/tool/lib/referl_core/src/refcore_fileman_abs.erl:10629-11222
+/branches/roland/metrics/trunk/tool/lib/referl_core/src/refcore_fileman.erl:7200-7434
+/branches/schwartza/collapsible_new_features/tool/lib/referl_core/src/refcore_fileman_abs.erl:12285-12303
+/branches/szabob/dupcode/tool/lib/referl_core/src/refcore_fileman_abs.erl:10747-12194
+/branches/szaboi/dweb2/tool/lib/referl_core/src/refcore_fileman_abs.erl:12232-12238
+/branches/szaboi/sq_in/tool/lib/referl_core/src/refcore_fileman_abs.erl:10314-10425
+/branches/szaboi/sq_setop/tool/lib/referl_core/src/refcore_fileman_abs.erl:10476-10599
+/branches/szaboi/sq_spec/tool/lib/referl_core/src/refcore_fileman_abs.erl:11101-12278
+/branches/ui/tool/lib/referl_core/src/refcore_fileman.erl:4613-5114
+/tags/second_tool/lib/referl_core/src/refcore_fileman.erl:4415-4609
+/trunk/metrics/trunk/tool/lib/referl_core/src/refcore_fileman.erl:2-7423
+/trunk/tool/lib/referl_core/src/refcore_fileman_abs.erl:12334-12358
+/trunk/yaws/tool/lib/referl_core/src/refcore_fileman.erl:2-8184
+END

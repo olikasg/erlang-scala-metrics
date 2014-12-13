@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators
+END
+validator_confirm_password.erl
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_confirm_password.erl
+END
+validator_is_email.erl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_is_email.erl
+END
+validator_min_length.erl
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_min_length.erl
+END
+validator_js_custom.erl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_js_custom.erl
+END
+validator_max_length.erl
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_max_length.erl
+END
+validator_is_integer.erl
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_is_integer.erl
+END
+validator_custom.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_custom.erl
+END
+validator_is_required.erl
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/validators/validator_is_required.erl
+END

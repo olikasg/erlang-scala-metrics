@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold
+END
+brace-fold.js
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/brace-fold.js
+END
+foldcode.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/foldcode.js
+END
+foldgutter.js
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/foldgutter.js
+END
+xml-fold.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/xml-fold.js
+END
+indent-fold.js
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/indent-fold.js
+END
+comment-fold.js
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/fold/comment-fold.js
+END

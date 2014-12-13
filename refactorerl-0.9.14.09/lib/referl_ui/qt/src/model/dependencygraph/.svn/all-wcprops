@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph
+END
+dependencygraph.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/dependencygraph.cc
+END
+dependencygraph.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/dependencygraph.h
+END
+dotparser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/dotparser.cc
+END
+edge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/edge.cc
+END
+dotparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/dotparser.h
+END
+node.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/node.cc
+END
+edge.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/edge.h
+END
+node.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/model/dependencygraph/node.h
+END

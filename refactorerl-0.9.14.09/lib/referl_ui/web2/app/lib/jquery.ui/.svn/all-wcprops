@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/jquery.ui
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/jquery.ui/LICENSE
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/jquery.ui/readme.txt
+END
+jquery-ui.custom.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/jquery.ui/jquery-ui.custom.js
+END
+jquery-ui.custom.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/jquery.ui/jquery-ui.custom.min.js
+END

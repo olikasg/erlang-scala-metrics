@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/tern
+END
+tern.css
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/tern/tern.css
+END
+tern.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/tern/tern.js
+END
+worker.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/tern/worker.js
+END

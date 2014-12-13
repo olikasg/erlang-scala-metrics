@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/role
+END
+role_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/role/role_handler.erl
+END
+default_role_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/handlers/role/default_role_handler.erl
+END

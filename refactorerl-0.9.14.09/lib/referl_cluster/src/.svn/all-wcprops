@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_cluster/src
+END
+cl_core.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_core.erl
+END
+cl_print.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_print.erl
+END
+multi_hashtree.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/multi_hashtree.erl
+END
+ucl_attr.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_attr.erl
+END
+cl_interface.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_interface.erl
+END
+cl_utils.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_utils.erl
+END
+cl_matrix.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_matrix.erl
+END
+cl_groupfun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_groupfun.erl
+END
+ucl_state.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_state.erl
+END
+cl_out.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_out.erl
+END
+ucl_alg_dm.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_alg_dm.erl
+END
+ucl_exec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_exec.erl
+END
+cl_attr.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_attr.erl
+END
+referl_cluster.appspec
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/referl_cluster.appspec
+END
+cl_fitness.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_fitness.erl
+END
+cl_fuzzy_c_means.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_fuzzy_c_means.erl
+END
+cl_distfun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_distfun.erl
+END
+ucl_common.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_common.erl
+END
+cl_genetic.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_genetic.erl
+END
+cl_draw_graph.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_draw_graph.erl
+END
+ucl_options.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_options.erl
+END
+ucl_alg.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_alg.erl
+END
+ucl_config.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_config.erl
+END
+cl_misc.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_misc.erl
+END
+ucl_clustering.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_clustering.erl
+END
+cl_cs.erl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_cs.erl
+END
+cl_mergefun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_mergefun.erl
+END
+cl_ui.erl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_ui.erl
+END
+cl_kmeans.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_kmeans.erl
+END
+set_dict.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/set_dict.erl
+END
+refcl_main.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/refcl_main.erl
+END
+cl_cutlib.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/cl_cutlib.erl
+END
+ucl_connection.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_cluster/src/ucl_connection.erl
+END

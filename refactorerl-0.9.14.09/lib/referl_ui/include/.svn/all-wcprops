@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/include
+END
+web2.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/include/web2.hrl
+END
+yaws.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/include/yaws.hrl
+END
+nitrogen.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/include/nitrogen.hrl
+END
+yaws_api.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/include/yaws_api.hrl
+END

@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view
+END
+investigationswidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/investigationswidget.h
+END
+duplicatedcodewidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodewidget.cc
+END
+mdiwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/mdiwidget.h
+END
+filelistwidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filelistwidget.cc
+END
+querieswidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/querieswidget.h
+END
+duplicatedcodealgorithmwidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodealgorithmwidget.cc
+END
+duplicatedcodealgorithmwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodealgorithmwidget.h
+END
+filebrowserwidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filebrowserwidget.cc
+END
+skeletondialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/skeletondialog.ui
+END
+addfileprogressdialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/addfileprogressdialog.cc
+END
+investigationswidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/investigationswidget.ui
+END
+dependencygraphwidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dependencygraphwidget.cc
+END
+duplicatedcodewidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodewidget.ui
+END
+dependencygraphwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dependencygraphwidget.h
+END
+filelistwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filelistwidget.ui
+END
+directoryprogressdialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/directoryprogressdialog.cc
+END
+dropfileprogressdialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dropfileprogressdialog.cc
+END
+mainwindow.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/mainwindow.cc
+END
+duplicatedcodealgorithmwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodealgorithmwidget.ui
+END
+mdiwidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/mdiwidget.cc
+END
+mainwindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/mainwindow.h
+END
+duplicatedcodewidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/duplicatedcodewidget.h
+END
+filebrowserwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filebrowserwidget.ui
+END
+querieswidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/querieswidget.cc
+END
+filelistwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12359/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filelistwidget.h
+END
+addfileprogressdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/addfileprogressdialog.ui
+END
+filebrowserwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/filebrowserwidget.h
+END
+dependencygraphwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dependencygraphwidget.ui
+END
+addfileprogressdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/addfileprogressdialog.h
+END
+dropfileprogressdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dropfileprogressdialog.ui
+END
+directoryprogressdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/directoryprogressdialog.ui
+END
+skeletondialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/skeletondialog.cc
+END
+mainwindow.ui
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/mainwindow.ui
+END
+skeletondialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/skeletondialog.h
+END
+querieswidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/querieswidget.ui
+END
+investigationswidget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/investigationswidget.cc
+END
+dropfileprogressdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/dropfileprogressdialog.h
+END
+directoryprogressdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/qt/src/view/directoryprogressdialog.h
+END

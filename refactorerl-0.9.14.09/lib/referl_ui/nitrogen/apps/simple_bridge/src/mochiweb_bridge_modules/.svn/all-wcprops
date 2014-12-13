@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/mochiweb_bridge_modules
+END
+mochiweb_response_bridge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/mochiweb_bridge_modules/mochiweb_response_bridge.erl
+END
+mochiweb_request_bridge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/mochiweb_bridge_modules/mochiweb_request_bridge.erl
+END

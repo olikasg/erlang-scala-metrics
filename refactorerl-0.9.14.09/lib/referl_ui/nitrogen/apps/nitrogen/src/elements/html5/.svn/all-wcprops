@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5
+END
+element_mark.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_mark.erl
+END
+element_time.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_time.erl
+END
+element_html5_header.erl
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_html5_header.erl
+END
+element_article.erl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_article.erl
+END
+element_hgroup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_hgroup.erl
+END
+element_nav.erl
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_nav.erl
+END
+element_section.erl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_section.erl
+END
+element_aside.erl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_aside.erl
+END
+element_html5_footer.erl
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/html5/element_html5_footer.erl
+END

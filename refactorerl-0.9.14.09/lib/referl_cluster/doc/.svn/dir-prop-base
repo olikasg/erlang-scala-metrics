@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 29
+*.html
+*.css
+*.png
+edoc-info
+
+END

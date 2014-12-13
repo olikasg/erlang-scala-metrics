@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services
+END
+jobsSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/jobsSpec.js
+END
+auto-completeSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/auto-completeSpec.js
+END
+authSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/authSpec.js
+END
+suspendableSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/suspendableSpec.js
+END
+channelSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/channelSpec.js
+END
+shortenerSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/shortenerSpec.js
+END
+get-session-idSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/test/unit/services/get-session-idSpec.js
+END

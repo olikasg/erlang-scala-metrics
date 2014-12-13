@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services
+END
+predefineds.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/predefineds.js
+END
+job-type.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/job-type.js
+END
+get-session-id.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/get-session-id.js
+END
+waiter.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/waiter.js
+END
+smart-location.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/smart-location.js
+END
+duplicates.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/duplicates.js
+END
+jobs.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/jobs.js
+END
+auth.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/auth.js
+END
+database.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/database.js
+END
+suspendable.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/suspendable.js
+END
+skeletons.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/skeletons.js
+END
+channel.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/channel.js
+END
+shortener.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/shortener.js
+END
+location-search.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/location-search.js
+END
+errors.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/errors.js
+END
+queries.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/queries.js
+END
+auto-complete.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/auto-complete.js
+END
+effects.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/effects.js
+END
+graphs.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/js/services/graphs.js
+END

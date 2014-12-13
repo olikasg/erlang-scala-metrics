@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout
+END
+element_template.erl
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout/element_template.erl
+END
+element_panel.erl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout/element_panel.erl
+END
+element_lightbox.erl
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout/element_lightbox.erl
+END
+element_placeholder.erl
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout/element_placeholder.erl
+END
+element_grid.erl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/layout/element_grid.erl
+END

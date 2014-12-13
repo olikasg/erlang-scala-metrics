@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src
+END
+nitrogen_dev.erl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/nitrogen_dev.erl
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/.gitignore
+END
+wf_core.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/wf_core.erl
+END
+nitrogen.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/nitrogen.erl
+END
+sync.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/sync.erl
+END
+wf.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/wf.erl
+END

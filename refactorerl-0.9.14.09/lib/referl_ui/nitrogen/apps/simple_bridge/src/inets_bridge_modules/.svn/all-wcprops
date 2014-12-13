@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/inets_bridge_modules
+END
+inets_response_bridge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/inets_bridge_modules/inets_response_bridge.erl
+END
+inets_request_bridge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/simple_bridge/src/inets_bridge_modules/inets_request_bridge.erl
+END

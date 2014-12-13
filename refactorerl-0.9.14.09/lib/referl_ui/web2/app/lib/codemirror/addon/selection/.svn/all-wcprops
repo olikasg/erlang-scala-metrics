@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/selection
+END
+mark-selection.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/selection/mark-selection.js
+END
+active-line.js
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/web2/app/lib/codemirror/addon/selection/active-line.js
+END

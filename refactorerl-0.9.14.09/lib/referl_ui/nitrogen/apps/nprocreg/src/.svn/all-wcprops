@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nprocreg/src
+END
+nprocreg_sup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nprocreg/src/nprocreg_sup.erl
+END
+nprocreg.appspec
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nprocreg/src/nprocreg.appspec
+END
+nprocreg.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nprocreg/src/nprocreg.erl
+END
+nprocreg_app.erl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nprocreg/src/nprocreg_app.erl
+END

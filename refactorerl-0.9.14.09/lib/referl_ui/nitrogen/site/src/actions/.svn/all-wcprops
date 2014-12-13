@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions
+END
+action_resize_textarea.erl
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions/action_resize_textarea.erl
+END
+.ignore
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions/.ignore
+END
+action_notification.erl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions/action_notification.erl
+END
+action_highlight_source.erl
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions/action_highlight_source.erl
+END
+action_toggle_access_to_db.erl
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/site/src/actions/action_toggle_access_to_db.erl
+END

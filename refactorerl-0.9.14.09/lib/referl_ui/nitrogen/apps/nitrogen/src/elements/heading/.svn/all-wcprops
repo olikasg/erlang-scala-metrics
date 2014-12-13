@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading
+END
+element_h1.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h1.erl
+END
+element_h2.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h2.erl
+END
+element_h3.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h3.erl
+END
+element_h4.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h4.erl
+END
+element_h5.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h5.erl
+END
+element_h6.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_ui/nitrogen/apps/nitrogen/src/elements/heading/element_h6.erl
+END

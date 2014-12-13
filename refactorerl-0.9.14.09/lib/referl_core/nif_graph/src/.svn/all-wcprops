@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src
+END
+gnode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/gnode.cpp
+END
+exception_helper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/exception_helper.cpp
+END
+nif_graph.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/nif_graph.cpp
+END
+state.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/state.cpp
+END
+graph.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/graph.cpp
+END
+globals.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/globals.cpp
+END
+directory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/directory.cpp
+END
+persistence.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/persistence.cpp
+END
+backup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/backup.cpp
+END
+bin_file.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/bin_file.cpp
+END
+conversions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/conversions.cpp
+END
+algorithms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/algorithms.cpp
+END
+nif_load.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/erlang/repos/!svn/ver/12337/tags/refactorerl-0.9.14.09/lib/referl_core/nif_graph/src/nif_load.cpp
+END

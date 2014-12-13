@@ -1,0 +1,137 @@
+ RefactorErl 0.9.14.09 Release Notes
+------------------------------------------------------------------------
+
+The 0.9.14.09 release can be built using the Erlang/OTP 17.0.
+
+improvements
+------------------------------------------------------------------------
+- Web2
+    To learn more about this interface, please, visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/Web2
+
+    - Code duplicates page is now available. All services provided by Clone 
+      IdentifiErl can be used. For instance:
+        - find clones of a selected code snippet, 
+        - run different algorithms, 
+        - export results,
+        - search in history.
+
+    - Introduced collapsible graph format. This format aims to support code 
+      grokking in terms of dependency visualisation. The insignificant parts of 
+      the dependency graph can be collapsed, thus users can concentrate only on 
+      the important parts. Moreover, the rendering of this format is extremely 
+      fast.
+
+    - Regarding to dependency analysis, multiple nodes can be given as starting 
+      nodes.
+
+    - Several stabilisations were made (e.g.: Bootstrap).
+
+    - Query results can be exported in a way that aims further processing the 
+      result by 'grep' utility.
+
+    - Previous search terms used in code browser are stored during the session.
+    
+    - Removed 'User defined dynamic function reference candidates' feature.
+
+
+- Clone IdentifiErl
+    To learn more about this feature, please, visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/CloneIdentifiErl
+    
+    - All algorithms returns clone groups instead of clone pairs.
+
+    - Preprocessed form of source code are considered during the analysis.
+
+    - Two new algorithms are introduced:
+        a) one aims to ease the elimination process by providing clones that are
+        straightforward to be eliminated
+        b) the other is the result of marrying Matrix and SW Metrics algorithms.
+
+    - The result of the analysis are cached, thus previous results can be loaded
+      only in some seconds. 
+
+    - Previous results can be retrieved in various forms and can be written into files.
+
+    - New output formats are introduced, so the following formats are available: 
+        a) textual representation of clones,
+        a) file and position information related to clones, 
+        b) nodes representing the clones, which can be further processed using 
+        one of the RefactorErl's features (e.g.: SQ, refactoring).
+
+    - New options are available to fine-tune the algorithms.
+
+    - Old suffix-tree based algorithm got polished:
+        a) more accurate,
+        b) faster, 
+        c) requires less memory.
+
+
+- QT
+    To learn more about this newly introduced interface, please, visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/QtInterface
+    QT based graphical user interface is a standard desktop application which 
+    provides the following functionalities:
+        - file and database management,
+        - semantic query execution with auto-complete,
+        - skeletons (query schemes),
+        - duplicated code analysis,
+        - dependency analysis with dependency graph visualisation,
+        - code investigations.
+
+
+- SQ
+    To learn more about this feature, please, visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/SemanticQuery
+
+    - Evaluation is parallelised.
+
+    - New language elements are introduced, namely, information about the types and
+      specification - spec, type and opaque forms - can be retrieved. 
+      For instance, if the return type of function named 'my_fun' is the question 
+      then the result of query 'mods.funs[name=my_fun].returntype' 
+      gives the answer.
+
+    - New language constructions are introduced:
+        - set operators. For instance, 
+          'mods.funs[name = my_fun].calls U mods.funs[name = my_fun].called_by' 
+          can be executed resulting in the functions that are directly connected 
+          to function named 'my_fun'.
+        - variables. For instance,
+          by evaluating the following query 'mods[name = A].funs[name=A]' the 
+          result contains functions whose names equals to the name of their 
+          modules.
+
+    - New service is introduced, namely, the grouping mechanism became 
+      customizable. By default, the results are grouped based on the values of 
+      the penultimate selector. For instance, the following query 
+      'mods.funs.calls[mod=my_mod]' returns those functions contained by the 
+      module 'my_mod' that are called by functions. The result is grouped based 
+      on the callers. However, if the relevant modules (containing the callers)
+      and the called functions are in the focus, the grouping needs to be based 
+      on the modules. Now, by defining the position of a selector the grouping
+      takes place based on the values of this selector. This possibility is only
+      supported in the module 'ri' at the moment. Returning back to the example, 
+      grouping based on modules can be requested by executing the following 
+      command: 'ri:q("mods.funs.calls[mod=my_mod]", [{groupby, 1}]).'.
+
+    - The autocomplete mechanism got polished.
+
+
+- Emacs:
+    To learn more about the interface, please visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/EmacsInterface
+    
+    - Clone IdentifiErl is supported.
+
+
+- Console interfaces:
+    To learn more about these interfaces, please visit
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/ErlangShellInterface
+    http://pnyf.inf.elte.hu/trac/refactorerl/wiki/ScriptableInterface
+
+    - Clone IdentifiErl is supported.
+
+removals
+------------------------------------------------------------------------
+- Code duplicates page is removed in the Nitrogen driven web based interface.
