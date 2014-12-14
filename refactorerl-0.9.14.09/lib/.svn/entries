@@ -1,80 +1,0 @@
-10
-
-dir
-12361
-https://plc.inf.elte.hu/erlang/repos/tags/refactorerl-0.9.14.09/lib
-https://plc.inf.elte.hu/erlang/repos
-
-
-
-2014-09-17T15:11:42.362435Z
-12359
-fordosv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-db0a0842-e02f-0410-8f3d-93c737554bc9
-
-referl_ui
-dir
-
-referl_user
-dir
-
-referl_cluster
-dir
-
-referl_lib
-dir
-
-referl_core
-dir
-
-referl_gen
-dir
-
-build.rules
-file
-
-
-
-
-2014-09-17T17:39:30.964129Z
-4de463cc39c17eca66d5bc10635de944
-2014-09-15T09:07:48.925813Z
-12336
-fordosv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-209
-

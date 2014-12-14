@@ -1,7 +1,0 @@
-K 10
-svn:ignore
-V 25
-*_parser.erl
-*_lexer.erl
-
-END
