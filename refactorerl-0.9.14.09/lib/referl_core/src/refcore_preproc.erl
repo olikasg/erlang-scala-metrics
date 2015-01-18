@@ -262,9 +262,10 @@ define(Stat, [], _Def) ->
 %% @spec macro_subst(formTokens(), node()) -> formTokens()
 %% @doc Performs macro substitution in a token list
 macro_subst([Head = {#token{type='?'}, Q} | Tail], File) ->
+    QuestionmarkToken = Q,
     case macro(Tail, File, Q) of
         skip ->
-            case env_subst(Tail) of
+            case env_subst(Tail, QuestionmarkToken) of
                 {subst, Subst, Rest} -> Subst ++ macro_subst(Rest, File);
                 no_subst             -> [Head | macro_subst(Tail, File)]
             end;
@@ -278,8 +279,10 @@ macro_subst([], _File) ->
     [].
 
 
-env_subst([{#token{type=Type, text=Text}, _}, T2={#token{type=Type2}, _} | Rest])
-        when Type == atom, Type2 /= '('; Type == variable, Type2 /= '(' ->
+env_subst([{#token{type=Type, text=Text}, LexNode}, T2={#token{type=Type2}, _} | Rest], 
+	  QuestionmarkToken)
+        when Type == atom, Type2 /= '('; 
+	     Type == variable, Type2 /= '(' ->
     MacName = macro_name(Text),
     case macro_env_defs(MacName) of
         []           -> no_subst;
@@ -288,17 +291,35 @@ env_subst([{#token{type=Type, text=Text}, _}, T2={#token{type=Type2}, _} | Rest]
                 error_logger:warning_msg(
                     ?MISC:format("Multiple env bodies given for macro ?~s~n",
                                  [MacName])),
-            Tokens = body_to_tokens(Body),
-            {subst, Tokens, [T2|Rest]}
+            {App, Token} = body_to_tokens(MacName, Body, QuestionmarkToken, LexNode),
+            %{subst, Tokens, [T2|Rest]}
+	    {subst, [{Token, virtual(none, App)}], [T2|Rest]}
     end;
-env_subst(_) ->
+env_subst(_, _Q) ->
     no_subst.
 
-body_to_tokens(_Body) ->
+body_to_tokens(MacName, Body, QuestionmarkToken, LexNode) ->
     % todo Tokenize the body using the Erlang scanner.
+    BodyStr = lists:flatten(io_lib:format("~w", [Body])),
+    ScanResult = erl_scan:string(BodyStr),
+    Tokens = case ScanResult of
+		 {ok, FoundTokens, _EndLoc} ->
+		     FoundTokens;
+		 Error ->
+		     error_logger:warning_msg(Error),
+		     []
+    end,
     % todo Turn the tokens into #token{}s.
+    %% FIXME: Multiple token macro
+    [TokenRecord] =  
+	[ begin
+	      [Text] = io_lib:format("~w", [Symbol]),
+	      #token{type = Category, 
+		     text = Text}
+	  end || {Category, _Attributes, Symbol} <- Tokens],
     % todo Make token nodes in the graph.
-    [].
+    App = create_macro_app(MacName, [QuestionmarkToken, LexNode]),
+    {App, TokenRecord}. 
 
 %% @doc Returns the environmentally set macro definitions for a macro name.
 %%      If no body is given (using ri:addenv(def, MacName)),
@@ -306,7 +327,7 @@ body_to_tokens(_Body) ->
 %%      othewise (using ri:addenv(def, {MacName, Body})) the given body is used.
 macro_env_defs(Name) when is_list(Name) ->
     %% FIXME: Name should be atom. Callers should be changed.
-    io:format(" *** FIXME: macro name as string: ~p", [Name]),
+    %% io:format(" *** FIXME: macro name as string: ~p", [Name]),
     macro_env_defs(list_to_atom(Name));
 macro_env_defs(Name) ->
     Defs = ?Graph:path(?Graph:root(), [{env, {name, '==', def}}]),
@@ -403,7 +424,7 @@ find_macdef(Name, Arity, File) ->
         [MacDef|Rest] ->
             ErrMsg = mac_conflicting_defs_msg(MacName, Arity, Path),
             Rest == [] orelse
-                error_logger:warning_msg(ErrMsg),
+                 error_logger:warning_msg(ErrMsg),
             {MacDef, Arity};
         [] ->
             case [MacDef || MacDef <- MacDefs,
@@ -417,9 +438,15 @@ find_macdef(Name, Arity, File) ->
                     {MacDef, no_args};
                 [] ->
                     #file{path=Path} = ?Graph:data(File),
-                    ErrMsg = ?MISC:format("Cannot find body for macro ?~s/~p in ~s~n",
+                    case macro_env_defs(MacName) of
+			[] ->
+			    ErrMsg = ?MISC:format("Cannot find body for macro "
+						  "?~s/~p in ~s~n",
                                              [MacName, Arity, Path]),
-                    error_logger:warning_msg(ErrMsg),
+			    error_logger:warning_msg(ErrMsg);
+			_ ->
+			    ok
+		    end,
                     skip
             end
     end.
