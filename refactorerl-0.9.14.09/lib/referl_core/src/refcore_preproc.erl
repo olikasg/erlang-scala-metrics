@@ -304,6 +304,10 @@ body_to_tokens(_Body) ->
 %%      If no body is given (using ri:addenv(def, MacName)),
 %%      a default body containing the atom 'placeholder_atom' is used,
 %%      othewise (using ri:addenv(def, {MacName, Body})) the given body is used.
+macro_env_defs(Name) when is_list(Name) ->
+    %% FIXME: Name should be atom. Callers should be changed.
+    io:format(" *** FIXME: macro name as string: ~p", [Name]),
+    macro_env_defs(list_to_atom(Name));
 macro_env_defs(Name) ->
     Defs = ?Graph:path(?Graph:root(), [{env, {name, '==', def}}]),
     [EnvBody || Def <- Defs,
