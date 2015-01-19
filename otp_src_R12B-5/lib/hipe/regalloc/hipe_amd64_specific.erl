@@ -1,0 +1,2 @@
+-define(HIPE_AMD64, true).
+-include("hipe_x86_specific.erl").

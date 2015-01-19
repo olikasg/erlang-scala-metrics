@@ -1,0 +1,40 @@
+INETS_VSN = 5.0.12
+
+TICKETS = \
+	OTP-7636
+
+TICKETS_5.0.11 = \
+	OTP-7574 \
+	OTP-7597 \
+	OTP-7598 \
+	OTP-7605 
+
+TICKETS_5.0.10 = \
+	OTP-7450 \
+	OTP-7454 \
+	OTP-7490 \
+	OTP-7512 
+
+TICKETS_5.0.9 = \
+	OTP-7257 \
+	OTP-7323 \
+	OTP-7341 
+
+TICKETS_5.0.8 = \
+	OTP-7315 \
+        OTP-7321
+
+TICKETS_5.0.7 = \
+	OTP-7304	
+
+TICKETS_5.0.6 = \
+	OTP-7266
+
+TICKETS_5.0.5 = \
+	OTP-7220 \
+        OTP-7221
+
+TICKETS_5.0.4 = \
+        OTP-7173
+
+

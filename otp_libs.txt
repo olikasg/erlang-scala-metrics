@@ -1,0 +1,51 @@
+[asn1,
+common_test,
+compiler,
+cosEvent,
+cosEventDomain,
+cosFileTransfer,
+cosNotification,
+cosProperty,
+cosTime,
+%cosTransactions, %include error
+crypto,
+debugger,
+dialyzer,
+%diameter, %no such
+edoc,
+%eldap, %no such
+%erl_docgen, %no such
+%erl_interface, %no erl files
+et,
+eunit,
+gs,
+%hipe, % include errors, cannot load as application
+ic,
+inets,
+%jinterface, %no erl files
+kernel, %type analyzer errors + one parse error inet6_sctp:33:41
+%megaco, %dataflow error and too large
+mnesia,
+observer,
+odbc,
+orber, %parse errors (ifdef + typo)
+os_mon,
+%ose, %no such
+otp_mibs,
+parsetools,
+percept,
+public_key,
+%reltool, %no such
+runtime_tools,
+sasl,
+snmp,
+ssh,
+ssl,
+stdlib, %type analyzer error issue#1
+syntax_tools,
+test_server,
+tools,
+typer,
+%webtool, %no such
+%wx, %no such
+xmerl]

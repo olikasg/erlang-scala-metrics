@@ -1,0 +1,12 @@
+{"%VSN%",	
+ [
+  {"1.0.1", [{load_module, ssh_sftpd, soft_purge, soft_purge, []}]},
+  {"1.0", [{restart_application, ssh}]}
+ ]				    
+ [
+  {"1.0.1", [{load_module, ssh_sftpd, soft_purge, soft_purge, []}]},	
+  {"1.0", [{restart_application, ssh}]}
+ ] 
+}.
+
+

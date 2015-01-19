@@ -1,0 +1,270 @@
+%% ``The contents of this file are subject to the Erlang Public License,
+%% Version 1.1, (the "License"); you may not use this file except in
+%% compliance with the License. You should have received a copy of the
+%% Erlang Public License along with this software. If not, it can be
+%% retrieved via the world wide web at http://www.erlang.org/.
+%% 
+%% Software distributed under the License is distributed on an "AS IS"
+%% basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+%% the License for the specific language governing rights and limitations
+%% under the License.
+%% 
+%% The Initial Developer of the Original Code is Ericsson Utvecklings AB.
+%% Portions created by Ericsson are Copyright 1999, Ericsson Utvecklings
+%% AB. All Rights Reserved.''
+%% 
+%%     $Id$
+%%
+-module(application).
+
+-export([start/1, start/2, start_boot/1, start_boot/2, stop/1, 
+	 load/1, load/2, unload/1, takeover/2,
+	 which_applications/0, which_applications/1,
+	 loaded_applications/0, permit/2]).
+-export([set_env/3, set_env/4, unset_env/2, unset_env/3]).
+-export([get_env/1, get_env/2, get_all_env/0, get_all_env/1]).
+-export([get_key/1, get_key/2, get_all_key/0, get_all_key/1]).
+-export([get_application/0, get_application/1, info/0]).
+-export([start_type/0]).
+
+-export([behaviour_info/1]).
+
+%%%-----------------------------------------------------------------
+
+-type(node()    :: atom()).
+-type(timeout() :: 'infinity' | non_neg_integer()).
+
+-type(restart_type() :: 'permanent' | 'transient' | 'temporary').
+-type(application_opt() :: {'description', string()}
+                         | {'vsn', string()}
+                         | {'id', string()}
+                         | {'modules', [atom() | {atom(), any()}]} 
+                         | {'registered', [atom()]}
+                         | {'applications', [atom()]}
+                         | {'included_applications', [atom()]}
+                         | {'env', [{atom(), any()}]}
+                         | {'start_phases', [{atom(), any()}] | 'undefined'}
+                         | {'maxT', timeout()}                % max timeout
+                         | {'maxP', integer() | 'infinity'}   % max processes
+                         | {'mod', {atom(), any()}}).
+-type(application_spec() :: {'application', atom(), [application_opt()]}).
+
+%%------------------------------------------------------------------
+
+behaviour_info(callbacks) ->
+    [{start,2},{stop,1}];
+behaviour_info(_Other) ->
+    undefined.
+
+%%%-----------------------------------------------------------------
+%%% This module is API towards application_controller and
+%%% application_master.
+%%%-----------------------------------------------------------------
+
+-spec(load/1 :: (Application :: atom() | application_spec()) ->
+	     'ok' | {'error', any()}).
+
+load(Application) ->
+    load(Application, []).
+
+-spec(load/2 :: (Application :: atom() | application_spec(),
+		 Distributed :: any()) -> 'ok' | {'error', any()}).
+
+load(Application, DistNodes) ->
+    case application_controller:load_application(Application) of
+	ok when DistNodes =/= [] ->
+	    AppName = get_appl_name(Application),
+	    case dist_ac:load_application(AppName, DistNodes) of
+		ok ->
+		    ok;
+		{error, R} ->
+		    application_controller:unload_application(AppName),
+		    {error, R}
+	    end;
+	Else ->
+	    Else
+    end.
+
+-spec(unload/1 :: (Application :: atom()) -> 'ok' | {'error', any()}).
+
+unload(Application) ->
+    application_controller:unload_application(Application).
+
+-spec(start/1 :: (Application :: atom()) -> 'ok' | {'error', any()}).
+
+start(Application) ->
+    start(Application, temporary).
+
+-spec(start/2 :: (Application :: atom() | application_spec(),
+		  RestartType :: restart_type()) -> any()).
+
+start(Application, RestartType) ->
+    case load(Application) of
+	ok ->
+	    Name = get_appl_name(Application),
+	    application_controller:start_application(Name, RestartType);
+	{error, {already_loaded, Name}} ->
+	    application_controller:start_application(Name, RestartType);
+	Error ->
+	    Error
+    end.
+
+-spec(start_boot/1 :: (Application :: atom()) -> 'ok' | {'error', any()}).
+
+start_boot(Application) ->
+    start_boot(Application, temporary).
+
+-spec(start_boot/2 :: (Application :: atom(), RestartType :: restart_type()) ->
+	     'ok' | {'error', any()}).
+
+start_boot(Application, RestartType) ->
+    application_controller:start_boot_application(Application, RestartType).
+
+-spec(takeover/2 :: (Application :: atom(), RestartType :: restart_type()) ->
+	     any()).
+
+takeover(Application, RestartType) ->
+    dist_ac:takeover_application(Application, RestartType).
+
+-spec(permit/2 :: (Application :: atom(), Bool :: bool()) ->
+	     'ok' | {'error', any()}).
+
+permit(Application, Bool) ->
+    case Bool of
+	true -> ok;
+	false -> ok;
+	Bad -> exit({badarg, {?MODULE, permit, [Application, Bad]}})
+    end,
+    case application_controller:permit_application(Application, Bool) of
+	distributed_application ->
+	    dist_ac:permit_application(Application, Bool);
+	{distributed_application, only_loaded} ->
+	    dist_ac:permit_only_loaded_application(Application, Bool);
+	LocalResult ->
+	    LocalResult
+    end.
+
+-spec(stop/1 :: (Application :: atom()) -> 'ok' | {'error', any()}).
+
+stop(Application) ->
+    application_controller:stop_application(Application).
+
+-spec(which_applications/0 :: () -> [{atom(), string(), string()}]).
+
+which_applications() ->
+    application_controller:which_applications().
+
+-spec(which_applications/1 :: (timeout()) -> [{atom(), string(), string()}]).
+
+which_applications(infinity) ->
+    application_controller:which_applications(infinity);
+which_applications(Timeout) when is_integer(Timeout), Timeout>=0 ->
+    application_controller:which_applications(Timeout).
+
+-spec(loaded_applications/0 :: () -> [{atom(), string(), string()}]).
+
+loaded_applications() -> 
+    application_controller:loaded_applications().
+
+-spec(info/0 :: () -> any()).
+
+info() -> 
+    application_controller:info().
+
+-spec(set_env/3 :: (Application :: atom(), Key :: atom(),
+		    Value :: any()) -> 'ok').
+
+set_env(Application, Key, Val) -> 
+    application_controller:set_env(Application, Key, Val).
+
+-spec(set_env/4 :: (Application :: atom(), Key :: atom(),
+		    Value :: any(), Timeout :: timeout()) -> 'ok').
+
+set_env(Application, Key, Val, infinity) ->
+    application_controller:set_env(Application, Key, Val, infinity);
+set_env(Application, Key, Val, Timeout) when is_integer(Timeout), Timeout>=0 ->
+    application_controller:set_env(Application, Key, Val, Timeout).
+
+-spec(unset_env/2 :: (Application :: atom(), Key :: atom()) -> 'ok').
+
+unset_env(Application, Key) -> 
+    application_controller:unset_env(Application, Key).
+
+-spec(unset_env/3 :: (Application :: atom(), Key :: atom(),
+		      Timeout :: timeout()) -> 'ok').
+
+unset_env(Application, Key, infinity) ->
+    application_controller:unset_env(Application, Key, infinity);
+unset_env(Application, Key, Timeout) when is_integer(Timeout), Timeout>=0 ->
+    application_controller:unset_env(Application, Key, Timeout).
+
+-spec(get_env/1 :: (Key :: atom()) -> 'undefined' | {'ok', any()}).
+
+get_env(Key) -> 
+    application_controller:get_pid_env(group_leader(), Key).
+
+-spec(get_env/2 :: (Application :: atom(), Key :: atom()) ->
+	     'undefined' | {'ok', any()}).
+
+get_env(Application, Key) -> 
+    application_controller:get_env(Application, Key).
+
+-spec(get_all_env/0 :: () -> [] | [{atom(), any()}]).
+
+get_all_env() -> 
+    application_controller:get_pid_all_env(group_leader()).
+
+-spec(get_all_env/1 :: (Application :: atom()) -> [] | [{atom(),any()}]).
+
+get_all_env(Application) -> 
+    application_controller:get_all_env(Application).
+
+-spec(get_key/1 :: (Key :: atom()) -> 'undefined' | {'ok', any()}).
+
+get_key(Key) -> 
+    application_controller:get_pid_key(group_leader(), Key).
+
+-spec(get_key/2 :: (Application :: atom(), Key :: atom()) ->
+	     'undefined' | {'ok', any()}).
+
+get_key(Application, Key) -> 
+    application_controller:get_key(Application, Key).
+
+-spec(get_all_key/0 :: () -> 'undefined' | [] | {'ok', [{atom(),any()},...]}).
+
+get_all_key() ->
+    application_controller:get_pid_all_key(group_leader()).
+
+-spec(get_all_key/1 :: (Application :: atom()) -> 
+	     'undefined' | [] | {'ok', [{atom(),any()}]}).
+
+get_all_key(Application) -> 
+    application_controller:get_all_key(Application).
+
+-spec(get_application/0 :: () -> 'undefined' | {'ok', atom()}).
+
+get_application() -> 
+    application_controller:get_application(group_leader()).
+
+-spec(get_application/1 :: (Pid :: pid()) -> 'undefined' | {'ok', atom()}
+			 ; (Module :: atom()) -> 'undefined' | {'ok', atom()}).
+
+get_application(Pid) when is_pid(Pid) ->
+    case process_info(Pid, group_leader) of
+	{group_leader, Gl} ->
+	    application_controller:get_application(Gl);
+	undefined ->
+	    undefined
+    end;
+get_application(Module) when is_atom(Module) ->
+    application_controller:get_application_module(Module).
+
+-spec(start_type/0 :: () -> 'undefined' | 'local' | 'normal'
+			  | {'takeover', node()} | {'failover', node()}).
+
+start_type() ->
+    application_controller:start_type(group_leader()).
+
+%% Internal
+get_appl_name(Name) when is_atom(Name) -> Name;
+get_appl_name({application, Name, _}) when is_atom(Name) -> Name.

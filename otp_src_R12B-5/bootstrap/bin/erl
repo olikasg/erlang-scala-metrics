@@ -1,0 +1,10 @@
+#!/bin/sh
+ROOTDIR=/Users/olahgabor/Documents/git/refactorerl/otp_src_R12B-5/bootstrap
+BINDIR=/Users/olahgabor/Documents/git/refactorerl/otp_src_R12B-5/bin/i386-apple-darwin14.0.0
+EMU=beam
+PROGNAME=`echo $0 | sed 's/.*\///'`
+export EMU
+export ROOTDIR
+export BINDIR
+export PROGNAME
+exec $BINDIR/erlexec ${1+"$@"}

@@ -1,0 +1,5 @@
+# $Id$
+# PPC64-specific atoms
+
+atom inc_stack_0
+atom ppc64

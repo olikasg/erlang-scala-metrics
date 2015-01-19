@@ -1,0 +1,143 @@
+# ``The contents of this file are subject to the Erlang Public License,
+# Version 1.1, (the "License"); you may not use this file except in
+# compliance with the License. You should have received a copy of the
+# Erlang Public License along with this software. If not, it can be
+# retrieved via the world wide web at http://www.erlang.org/.
+# 
+# Software distributed under the License is distributed on an "AS IS"
+# basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+# the License for the specific language governing rights and limitations
+# under the License.
+# 
+# The Initial Developer of the Original Code is Ericsson Utvecklings AB.
+# Portions created by Ericsson are Copyright 1999, Ericsson Utvecklings
+# AB. All Rights Reserved.''
+# 
+#     $Id$
+#
+include $(ERL_TOP)/make/target.mk
+include $(ERL_TOP)/make/$(TARGET)/otp.mk
+
+# ----------------------------------------------------
+# Application version
+# ----------------------------------------------------
+include ../vsn.mk
+VSN=$(CRYPTO_VSN)
+
+# ----------------------------------------------------
+# The following variables differ between systems.
+# Set by configure.
+# ----------------------------------------------------
+CC = gcc
+LD = gcc
+SHELL = /bin/sh
+LIBS = -lutil -ldl -lm  
+LDFLAGS = -m64 -bundle -flat_namespace -undefined suppress
+CFLAGS = -g -O2 -I/Users/olahgabor/Documents/git/refactorerl/otp_src_R12B-5/erts/i386-apple-darwin14.0.0  -no-cpp-precomp    -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -fPIC -fno-common
+ERLANG_OSTYPE = unix
+TARGET = i386-apple-darwin14.0.0
+SSL_LIBDIR = /usr/lib
+SSL_INCLUDE = -I/usr/include
+
+PRIVDIR = ../priv
+OBJDIR = $(PRIVDIR)/obj/$(TARGET)
+LIBDIR = $(PRIVDIR)/lib/$(TARGET)
+
+# For erl_driver.h
+SYS_INCLUDE = -I$(ERL_TOP)/erts/emulator/beam \
+	-I$(ERL_TOP)/erts/emulator/sys/$(ERLANG_OSTYPE)
+
+INCLUDES = $(SSL_INCLUDE) $(SYS_INCLUDE)
+
+ifeq ($(TYPE),debug)
+TYPEMARKER = .debug
+TYPE_FLAGS = $(subst -O3,,$(subst -O2,,$(CFLAGS))) -DDEBUG
+else
+TYPEMARKER =
+TYPE_FLAGS = $(CFLAGS)
+endif
+
+ALL_CFLAGS = $(TYPE_FLAGS) $(INCLUDES)
+
+# ----------------------------------------------------
+# Release directory specification
+# ----------------------------------------------------
+RELSYSDIR = $(RELEASE_PATH)/lib/crypto-$(VSN)
+
+# ----------------------------------------------------
+# Misc Macros
+# ----------------------------------------------------
+OBJS = $(OBJDIR)/crypto_drv.o
+DRV_MAKEFILE = $(PRIVDIR)/Makefile
+
+ifeq ($(findstring win32,$(TARGET)), win32)
+DYN_DRIVER = $(LIBDIR)/crypto_drv.dll
+else
+DYN_DRIVER = $(LIBDIR)/crypto_drv.so
+endif
+
+ifeq ($(HOST_OS),)
+HOST_OS := $(shell $(ERL_TOP)/erts/autoconf/config.guess)
+endif
+DYNAMIC_CRYPTO_LIB=yes
+LD_R_FLAG=
+ifeq ($(strip $(LD_R_FLAG)),)
+LD_R_OPT =
+else
+ifeq ($(DYNAMIC_CRYPTO_LIB),yes)
+LD_R_OPT = $(LD_R_FLAG)$(SSL_LIBDIR)
+else
+LD_R_OPT =
+endif
+endif
+
+ifeq ($(DYNAMIC_CRYPTO_LIB),yes)
+CRYPTO_LINK_LIB=-L$(SSL_LIBDIR) -lcrypto
+else
+CRYPTO_LINK_LIB=$(SSL_LIBDIR)/libcrypto.a 
+endif
+
+# ----------------------------------------------------
+# Targets
+# ----------------------------------------------------
+
+debug opt: $(OBJDIR) $(LIBDIR) $(DYN_DRIVER)
+
+$(OBJDIR):
+	-@mkdir -p $(OBJDIR)
+
+$(LIBDIR):
+	-@mkdir -p $(LIBDIR)
+
+$(OBJDIR)/%.o: %.c
+	$(INSTALL_DIR) $(OBJDIR)
+	$(CC) -c -o $@ $(ALL_CFLAGS) $<
+
+$(LIBDIR)/crypto_drv.so: $(OBJS)
+	$(INSTALL_DIR) $(LIBDIR) 
+	$(LD) $(LDFLAGS) $(LD_R_OPT) -o $@ $^ $(LDLIBS) $(CRYPTO_LINK_LIB)
+
+$(LIBDIR)/crypto_drv.dll: $(OBJS)
+	$(INSTALL_DIR) $(LIBDIR)
+	$(LD) $(LDFLAGS) -o $@ -L$(SSL_LIBDIR) $(OBJS) -llibeay32
+
+clean:
+	rm -f $(DYN_DRIVER) $(OBJS)
+	rm -f core *~
+
+docs:
+
+# ----------------------------------------------------
+# Release Target
+# ---------------------------------------------------- 
+include $(ERL_TOP)/make/otp_release_targets.mk
+
+release_spec: opt
+	$(INSTALL_DIR) $(RELSYSDIR)/priv/obj
+	$(INSTALL_DIR) $(RELSYSDIR)/priv/lib
+	$(INSTALL_PROGRAM) $(DRV_MAKEFILE) $(RELSYSDIR)/priv/obj
+	$(INSTALL_PROGRAM) $(OBJS) $(RELSYSDIR)/priv/obj
+	$(INSTALL_PROGRAM) $(DYN_DRIVER) $(RELSYSDIR)/priv/lib
+
+release_docs_spec:
+
