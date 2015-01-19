@@ -470,7 +470,8 @@ macdef_arity(MacDef) ->
             no_args;
         [ArgNode] ->
             ArgVars = [Node || Node <- ?Graph:path(ArgNode, [llex]),
-                               #lex{data=#token{type=variable}} <- [?Graph:data(Node)]],
+                               #lex{data=#token{type=T}} <- [?Graph:data(Node)],
+		      T == variable orelse T == '_'],
             length(ArgVars)
     end.
 
