@@ -1,0 +1,1456 @@
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$ bin/referl -db kcmini -dir data_r13b
+Erlang R16B03-1 (erts-5.10.4) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:true]
+
+
+Kyoto Cabinet database is selected
+Currently you are using the following database parameters:
+db_type (file extension): kct
+#apow=3
+#msiz=4096
+#dfunit=64
+#psiz=8192
+#pccap=128000000
+#bnum=1000000
+
+For fine tuning Kyoto Cabinet, use the following startup command with your custom db arguments. db_type defaults to 'kct'.
+$ bin/referl -dbmod refdb_kyotomini -dbargs "[{db_type, 'MyType'}, {apow, 1}, {ARG, VAL}, ...]"
+Tuning the database may result in data loss! Use with caution!
+For the meaning of the parameters please refer to the Kyoto Cabinet documentation (kclangc.h / kcdbpoen()): http://fallabs.com/kyotocabinet/
+
+
+=INFO REPORT==== 20-Jan-2015::09:08:37 ===
+The tool will be started with the default positioning mode (abs).
+Eshell V5.10.4  (abort with ^G)
+(refactorerl@localhost)1> OTP_ROOT = "/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/".
+"/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/"
+(refactorerl@localhost)2> ri:addenv(appbase, OTP_ROOT ++ "lib").
+ok
+(refactorerl@localhost)3> ri:addenv(def, {'COMPILER_VSN',42}).
+ok
+(refactorerl@localhost)4> ri:addenv(def, {'COMPILERVSN',42}).
+ok
+(refactorerl@localhost)5> ri:addenv(def, {'VSN',42}).
+ok
+(refactorerl@localhost)6> ri:addenv(def, {'vsn',42}).
+ok
+(refactorerl@localhost)7> ri:addenv(def, {'ORBVSN',42}).
+ok
+(refactorerl@localhost)8> ri:addenv(def, {'version',42}).
+ok
+(refactorerl@localhost)9> ri:addenv(def, {'default_verbosity', 42}).
+ok
+(refactorerl@localhost)10> ri:addenv(def, {'erlang_daemon_port',42}).
+ok
+(refactorerl@localhost)11> ri:addenv(def, {'epmd_dist_low',42}).
+ok
+(refactorerl@localhost)12> ri:addenv(def, {'epmd_dist_high',42}).
+ok
+(refactorerl@localhost)13> ri:addenv(def, {'HIPE_SYSTEM_CRC', 42}).
+ok
+(refactorerl@localhost)14> ri:addenv(def, {'ARM_NR_ARG_REGS', 42}).
+ok
+(refactorerl@localhost)15> ri:addenv(include, OTP_ROOT ++ "erts/include").
+ok
+(refactorerl@localhost)16> ri:addenv(include, OTP_ROOT ++ "lib/common_test/include").
+ok
+(refactorerl@localhost)17> ri:addenv(include, OTP_ROOT ++ "lib/cosEvent/include").
+ok
+(refactorerl@localhost)18> ri:addenv(include, OTP_ROOT ++ "lib/cosEventDomain/include").
+ok
+(refactorerl@localhost)19> ri:addenv(include, OTP_ROOT ++ "lib/cosFileTransfer/include").
+ok
+(refactorerl@localhost)20> ri:addenv(include, OTP_ROOT ++ "lib/cosNotification/include").
+ok
+(refactorerl@localhost)21> ri:addenv(include, OTP_ROOT ++ "lib/cosProperty/include").
+ok
+(refactorerl@localhost)22> ri:addenv(include, OTP_ROOT ++ "lib/cosTime/include").
+ok
+(refactorerl@localhost)23> ri:addenv(include, OTP_ROOT ++ "lib/cosTransactions/include").
+ok
+(refactorerl@localhost)24> ri:addenv(include, OTP_ROOT ++ "lib/cosTransactions/src").
+ok
+(refactorerl@localhost)25> ri:addenv(include, OTP_ROOT ++ "lib/dialyzer/src").
+ok
+(refactorerl@localhost)26> ri:addenv(include, OTP_ROOT ++ "lib/edoc/include").
+ok
+(refactorerl@localhost)27> ri:addenv(include, OTP_ROOT ++ "lib/erl_interface/include").
+ok
+(refactorerl@localhost)28> ri:addenv(include, OTP_ROOT ++ "lib/et/include").
+ok
+(refactorerl@localhost)29> ri:addenv(include, OTP_ROOT ++ "lib/eunit/include").
+ok
+(refactorerl@localhost)30> ri:addenv(include, OTP_ROOT ++ "lib/hipe/arm").
+ok
+(refactorerl@localhost)31> ri:addenv(include, OTP_ROOT ++ "lib/hipe/cerl").
+ok
+(refactorerl@localhost)32> ri:addenv(include, OTP_ROOT ++ "lib/hipe/flow").
+ok
+(refactorerl@localhost)33> ri:addenv(include, OTP_ROOT ++ "lib/hipe/icode").
+ok
+(refactorerl@localhost)34> ri:addenv(include, OTP_ROOT ++ "lib/hipe/main").
+ok
+(refactorerl@localhost)35> ri:addenv(include, OTP_ROOT ++ "lib/hipe/misc").
+ok
+(refactorerl@localhost)36> ri:addenv(include, OTP_ROOT ++ "lib/hipe/ppc").
+ok
+(refactorerl@localhost)37> ri:addenv(include, OTP_ROOT ++ "lib/hipe/rtl").
+ok
+(refactorerl@localhost)38> ri:addenv(include, OTP_ROOT ++ "lib/hipe/sparc").
+ok
+(refactorerl@localhost)39> ri:addenv(include, OTP_ROOT ++ "lib/hipe/util").
+ok
+(refactorerl@localhost)40> ri:addenv(include, OTP_ROOT ++ "lib/hipe/x86").
+ok
+(refactorerl@localhost)41> ri:addenv(include, OTP_ROOT ++ "lib/ic/include").
+ok
+(refactorerl@localhost)42> ri:addenv(include, OTP_ROOT ++ "lib/inets/src/inets_app").
+ok
+(refactorerl@localhost)43> ri:addenv(include, OTP_ROOT ++ "lib/inets/src/http_lib").
+ok
+(refactorerl@localhost)44> ri:addenv(include, OTP_ROOT ++ "lib/inviso/include").
+ok
+(refactorerl@localhost)45> ri:addenv(include, OTP_ROOT ++ "lib/kernel/include").
+ok
+(refactorerl@localhost)46> ri:addenv(include, OTP_ROOT ++ "lib/megaco/include").
+ok
+(refactorerl@localhost)47> ri:addenv(include, OTP_ROOT ++ "lib/mnesia/include").
+ok
+(refactorerl@localhost)48> ri:addenv(include, OTP_ROOT ++ "lib/observer/include").
+ok
+(refactorerl@localhost)49> ri:addenv(include, OTP_ROOT ++ "lib/odbc/include").
+ok
+(refactorerl@localhost)50> ri:addenv(include, OTP_ROOT ++ "lib/orber/include").
+ok
+(refactorerl@localhost)51> ri:addenv(include, OTP_ROOT ++ "lib/os_mon/include").
+ok
+(refactorerl@localhost)52> ri:addenv(include, OTP_ROOT ++ "lib/otp_mibs/include").
+ok
+(refactorerl@localhost)53> ri:addenv(include, OTP_ROOT ++ "lib/parsetools/include").
+ok
+(refactorerl@localhost)54> ri:addenv(include, OTP_ROOT ++ "lib/percept/include").
+ok
+(refactorerl@localhost)55> ri:addenv(include, OTP_ROOT ++ "lib/public_key/include").
+ok
+(refactorerl@localhost)56> ri:addenv(include, OTP_ROOT ++ "lib/runtime_tools/include").
+ok
+(refactorerl@localhost)57> ri:addenv(include, OTP_ROOT ++ "lib/sasl/include").
+ok
+(refactorerl@localhost)58> ri:addenv(include, OTP_ROOT ++ "lib/snmp/include").
+ok
+(refactorerl@localhost)59> ri:addenv(include, OTP_ROOT ++ "lib/snmp/src/misc").
+ok
+(refactorerl@localhost)60> ri:addenv(include, OTP_ROOT ++ "lib/snmp/src/compile").
+ok
+(refactorerl@localhost)61> ri:addenv(include, OTP_ROOT ++ "lib/ssl/include").
+ok
+(refactorerl@localhost)62> ri:addenv(include, OTP_ROOT ++ "lib/stdlib/include").
+ok
+(refactorerl@localhost)63> ri:addenv(include, OTP_ROOT ++ "lib/test_server/include").
+ok
+(refactorerl@localhost)64> ri:addenv(include, OTP_ROOT ++ "lib/xmerl/include").
+ok
+(refactorerl@localhost)65>
+(refactorerl@localhost)65>
+(refactorerl@localhost)65>
+(refactorerl@localhost)65>
+(refactorerl@localhost)65>
+(refactorerl@localhost)65> OTP_LIBS = [asn1,
+(refactorerl@localhost)65> common_test,
+(refactorerl@localhost)65> compiler,
+(refactorerl@localhost)65> cosEvent,
+(refactorerl@localhost)65> cosEventDomain,
+(refactorerl@localhost)65> cosFileTransfer,
+(refactorerl@localhost)65> cosNotification,
+(refactorerl@localhost)65> cosProperty,
+(refactorerl@localhost)65> cosTime,
+(refactorerl@localhost)65> %cosTransactions, %include error
+(refactorerl@localhost)65> crypto,
+(refactorerl@localhost)65> debugger,
+(refactorerl@localhost)65> dialyzer,
+(refactorerl@localhost)65> %diameter, %no such
+(refactorerl@localhost)65> edoc,
+(refactorerl@localhost)65> %eldap, %no such
+(refactorerl@localhost)65> %erl_docgen, %no such
+(refactorerl@localhost)65> %erl_interface, %no erl files
+(refactorerl@localhost)65> et,
+(refactorerl@localhost)65> eunit,
+(refactorerl@localhost)65> gs,
+(refactorerl@localhost)65> %hipe, % include errors, cannot load as application
+(refactorerl@localhost)65> ic,
+(refactorerl@localhost)65> inets,
+(refactorerl@localhost)65> %jinterface, %no erl files
+(refactorerl@localhost)65> kernel, %type analyzer errors + one parse error inet6_sctp:33:41
+(refactorerl@localhost)65> %megaco, %dataflow error and too large
+(refactorerl@localhost)65> mnesia,
+(refactorerl@localhost)65> observer,
+(refactorerl@localhost)65> odbc,
+(refactorerl@localhost)65> orber, %parse errors (ifdef + typo)
+(refactorerl@localhost)65> os_mon,
+(refactorerl@localhost)65> %ose, %no such
+(refactorerl@localhost)65> otp_mibs,
+(refactorerl@localhost)65> parsetools,
+(refactorerl@localhost)65> percept,
+(refactorerl@localhost)65> public_key,
+(refactorerl@localhost)65> %reltool, %no such
+(refactorerl@localhost)65> runtime_tools,
+(refactorerl@localhost)65> sasl,
+(refactorerl@localhost)65> snmp,
+(refactorerl@localhost)65> ssh,
+(refactorerl@localhost)65> ssl,
+(refactorerl@localhost)65> stdlib, %type analyzer error issue#1
+(refactorerl@localhost)65> syntax_tools,
+(refactorerl@localhost)65> test_server,
+(refactorerl@localhost)65> tools,
+(refactorerl@localhost)65> typer,
+(refactorerl@localhost)65> %webtool, %no such
+(refactorerl@localhost)65> %wx, %no such
+(refactorerl@localhost)65> xmerl]
+(refactorerl@localhost)65> .
+[asn1,common_test,compiler,cosEvent,cosEventDomain,
+ cosFileTransfer,cosNotification,cosProperty,cosTime,crypto,
+ debugger,dialyzer,edoc,et,eunit,gs,ic,inets,kernel,mnesia,
+ observer,odbc,orber,os_mon,otp_mibs,parsetools,percept,
+ public_key,runtime_tools|...]
+(refactorerl@localhost)66> [ri:add(otp, Lib) || Lib <- OTP_LIBS].
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/asn1/src
+| 2.55 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] asn1_app.erl
+| 4.46 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] asn1_db.erl
+| 3.99 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] asn1_server.erl
+| 5.66 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] asn1_sup.erl
+| 5.28 kB/s >>>>>>>>>>>>>>>>>>>| [ 182/ 182] asn1ct.erl
+| 5.05 kB/s >>>>>>>>>>>>>>>>>>>| [ 404/ 404] asn1ct_check.erl
+| 5.51 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] asn1ct_constructed_ber.erl
+| 5.35 kB/s >>>>>>>>>>>>>>>>>>>| [  61/  61] asn1ct_constructed_ber_bin_v2.erl
+| 5.40 kB/s >>>>>>>>>>>>>>>>>>>| [  67/  67] asn1ct_constructed_per.erl
+| 5.52 kB/s >>>>>>>>>>>>>>>>>>>| [ 117/ 117] asn1ct_gen.erl
+| 5.59 kB/s >>>>>>>>>>>>>>>>>>>| [  83/  83] asn1ct_gen_ber.erl
+| 5.27 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] asn1ct_gen_ber_bin_v2.erl
+| 5.37 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] asn1ct_gen_per.erl
+| 5.14 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] asn1ct_gen_per_rt2ct.erl
+| 3.65 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] asn1ct_name.erl
+| 4.71 kB/s >>>>>>>>>>>>>>>>>>>| [ 201/ 201] asn1ct_parser2.erl
+| 3.62 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] asn1ct_pretty_format.erl
+| 5.05 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] asn1ct_tok.erl
+| 3.96 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] asn1ct_value.erl
+| 3.58 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] asn1rt.erl
+| 4.72 kB/s >>>>>>>>>>>>>>>>>>>| [ 218/ 218] asn1rt_ber_bin.erl
+| 4.42 kB/s >>>>>>>>>>>>>>>>>>>| [ 198/ 198] asn1rt_ber_bin_v2.erl
+| 4.42 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] asn1rt_check.erl
+| 2.92 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] asn1rt_driver_handler.erl
+| 4.07 kB/s >>>>>>>>>>>>>>>>>>>| [ 163/ 163] asn1rt_per_bin.erl
+| 4.21 kB/s >>>>>>>>>>>>>>>>>>>| [ 146/ 146] asn1rt_per_bin_rt2ct.erl
+| 4.13 kB/s >>>>>>>>>>>>>>>>>>>| [ 151/ 151] asn1rt_uper_bin.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/common_test/src
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] ct.erl
+| 4.15 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] ct_cover.erl
+| 2.71 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ct_event.erl
+| 4.39 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] ct_framework.erl
+| 3.52 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] ct_ftp.erl
+| 3.63 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ct_gen_conn.erl
+| 5.09 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] ct_line.erl
+| 4.36 kB/s >>>>>>>>>>>>>>>>>>>| [ 127/ 127] ct_logs.erl
+| 3.75 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] ct_make.erl
+| 3.99 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] ct_master.erl
+| 3.12 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] ct_master_event.erl
+| 3.92 kB/s >>>>>>>>>>>>>>>>>>>| [  51/  51] ct_master_logs.erl
+| 2.72 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] ct_master_status.erl
+| 3.83 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] ct_repeat.erl
+| 3.36 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ct_rpc.erl
+| 4.37 kB/s >>>>>>>>>>>>>>>>>>>| [  82/  82] ct_run.erl
+| 3.84 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] ct_snmp.erl
+| 3.62 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] ct_ssh.erl
+| 4.07 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] ct_telnet.erl
+| 3.58 kB/s >>>>>>>>>>>>>>>>>>>| [  46/  46] ct_telnet_client.erl
+| 3.89 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] ct_testspec.erl
+| 3.72 kB/s >>>>>>>>>>>>>>>>>>>| [ 118/ 118] ct_util.erl
+| 4.96 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] unix_telnet.erl
+| 3.48 kB/s >>>>>>>>>>>>>>>>>>>| [ 119/ 119] vts.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/compiler/src
+| 3.12 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] beam_asm.erl
+| 3.15 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] beam_block.erl
+| 3.01 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] beam_bool.erl
+| 4.16 kB/s >>>>>>>>>>>>>>>>>>>| [  50/  50] beam_bsm.erl
+| 3.35 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] beam_clean.erl
+| 3.38 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] beam_dead.erl
+| 3.81 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] beam_dict.erl
+| 4.25 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] beam_disasm.erl
+| 3.47 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] beam_flatten.erl
+| 3.72 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] beam_jump.erl
+| 2.77 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] beam_listing.erl
+| 6.36 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] beam_opcodes.erl
+| 3.36 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] beam_peep.erl
+| 3.56 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] beam_trim.erl
+| 3.30 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] beam_type.erl
+| 4.13 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] beam_utils.erl
+| 3.72 kB/s >>>>>>>>>>>>>>>>>>>| [ 147/ 147] beam_validator.erl
+| 2.36 kB/s >>>>>>>>>>>>>>>>>>>| [ 528/ 528] cerl.erl
+| 3.05 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] cerl_clauses.erl
+| 2.46 kB/s >>>>>>>>>>>>>>>>>>>| [ 184/ 184] cerl_inline.erl
+| 2.97 kB/s >>>>>>>>>>>>>>>>>>>| [  46/  46] cerl_trees.erl
+| 3.19 kB/s >>>>>>>>>>>>>>>>>>>| [ 133/ 133] compile.erl
+| 2.79 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] core_lib.erl
+| 3.08 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] core_lint.erl
+| 3.09 kB/s >>>>>>>>>>>>>>>>>>>| [ 715/ 715] core_parse.erl
+| 3.09 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] core_pp.erl
+| 2.99 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] core_scan.erl
+| 6.85 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] erl_bifs.erl
+| 2.78 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] rec_env.erl
+| 2.68 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] sys_core_dsetel.erl
+| 2.65 kB/s >>>>>>>>>>>>>>>>>>>| [ 187/ 187] sys_core_fold.erl
+| 2.35 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] sys_core_inline.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] sys_expand_pmod.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] sys_pre_attributes.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] sys_pre_expand.erl
+| 2.81 kB/s >>>>>>>>>>>>>>>>>>>| [ 164/ 164] v3_codegen.erl
+| 2.99 kB/s >>>>>>>>>>>>>>>>>>>| [ 188/ 188] v3_core.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [ 152/ 152] v3_kernel.erl
+| 3.36 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] v3_kernel_pp.erl
+| 2.78 kB/s >>>>>>>>>>>>>>>>>>>| [  45/  45] v3_life.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosEvent/src
+| 1.97 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventChannelAdmin_AlreadyConnected.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosEventChannelAdmin_ConsumerAdmin.erl
+| 3.05 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosEventChannelAdmin_EventChannel.erl
+| 3.10 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosEventChannelAdmin_ProxyPullConsumer.erl
+| 2.86 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] CosEventChannelAdmin_ProxyPullConsumer_impl.erl
+| 3.35 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosEventChannelAdmin_ProxyPullSupplier.erl
+| 3.34 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] CosEventChannelAdmin_ProxyPushConsumer.erl
+| 3.06 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] CosEventChannelAdmin_ProxyPushConsumer_impl.erl
+| 3.16 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosEventChannelAdmin_ProxyPushSupplier.erl
+| 3.18 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosEventChannelAdmin_SupplierAdmin.erl
+| 3.16 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] CosEventChannelAdmin_SupplierAdmin_impl.erl
+| 2.01 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventChannelAdmin_TypeError.erl
+| 1.86 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventComm_Disconnected.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] CosEventComm_PullConsumer.erl
+| 2.89 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosEventComm_PullSupplier.erl
+| 2.77 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosEventComm_PushConsumer.erl
+| 2.75 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] CosEventComm_PushSupplier.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] cosEventApp.erl
+| 6.38 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosEventChannelAdmin.erl
+| 5.63 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosEventComm.erl
+| 2.76 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] oe_CosEventComm_CAdmin.erl
+| 3.50 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] oe_CosEventComm_CAdmin_impl.erl
+| 3.16 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] oe_CosEventComm_Channel.erl
+| 3.68 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] oe_CosEventComm_Channel_impl.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] oe_CosEventComm_Event.erl
+| 3.32 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] oe_CosEventComm_PullerS.erl
+| 3.29 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] oe_CosEventComm_PullerS_impl.erl
+| 3.19 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] oe_CosEventComm_PusherS.erl
+| 3.90 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] oe_CosEventComm_PusherS_impl.erl
+| 4.37 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_cosEventApp.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosEventDomain/src
+| 1.47 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] CosEventDomainAdmin.erl
+| 1.27 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_AlreadyExists.erl
+| 3.01 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_Connection.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_ConnectionIDSeq.erl
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_ConnectionNotFound.erl
+| 2.55 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_CycleCreationForbidden.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_CycleSeq.erl
+| 2.66 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_DiamondCreationForbidden.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_DiamondSeq.erl
+| 1.70 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_DomainIDSeq.erl
+| 2.20 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_DomainNotFound.erl
+| 4.64 kB/s >>>>>>>>>>>>>>>>>>>| [ 144/ 144] CosEventDomainAdmin_EventDomain.erl
+| 2.84 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosEventDomainAdmin_EventDomainFactory.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] CosEventDomainAdmin_EventDomainFactory_impl.erl
+| 2.84 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] CosEventDomainAdmin_EventDomain_impl.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_MemberIDSeq.erl
+| 1.59 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosEventDomainAdmin_RouteSeq.erl
+| 2.57 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] cosEventDomainApp.erl
+| 8.95 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosEventDomainAdmin.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosFileTransfer/src
+| 0.79 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] CosFileTransfer.erl
+| 1.75 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_AccessLevel.erl
+| 2.01 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_CommandNotImplementedException.erl
+| 3.75 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] CosFileTransfer_Directory.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] CosFileTransfer_Directory_impl.erl
+| 3.51 kB/s >>>>>>>>>>>>>>>>>>>| [  89/  89] CosFileTransfer_File.erl
+| 2.46 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosFileTransfer_FileIterator.erl
+| 1.68 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] CosFileTransfer_FileIterator_impl.erl
+| 2.48 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_FileList.erl
+| 1.39 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_FileNameList.erl
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_FileNotFoundException.erl
+| 3.42 kB/s >>>>>>>>>>>>>>>>>>>| [  61/  61] CosFileTransfer_FileTransferSession.erl
+| 3.14 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] CosFileTransfer_FileTransferSession_impl.erl
+| 2.52 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_FileWrapper.erl
+| 2.40 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] CosFileTransfer_File_impl.erl
+| 1.85 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_IllegalOperationException.erl
+| 1.52 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_ProtocolAddressList.erl
+| 1.98 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_ProtocolSupport.erl
+| 1.96 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_RequestFailureException.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_SessionException.erl
+| 2.11 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_SupportedProtocolAddresses.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_TransferException.erl
+| 2.75 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosFileTransfer_VirtualFileSystem.erl
+| 1.77 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosFileTransfer_VirtualFileSystem_ContentList.erl
+| 2.93 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] CosFileTransfer_VirtualFileSystem_impl.erl
+| 2.62 kB/s >>>>>>>>>>>>>>>>>>>| [  46/  46] cosFileTransferApp.erl
+| 1.96 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] cosFileTransferNATIVE_file.erl
+| 7.96 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosFileTransfer.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosNotification/src
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] CosNotification.erl
+| 2.49 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotification_AdminPropertiesAdmin.erl
+| 2.27 kB/s >>>>>>>>>>>>>>>>>>>| [  62/  62] CosNotification_Common.erl
+| 4.02 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_EventBatch.erl
+| 3.20 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_EventHeader.erl
+| 1.70 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_EventType.erl
+| 1.85 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_EventTypeSeq.erl
+| 2.37 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_FixedEventHeader.erl
+| 2.37 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_NamedPropertyRange.erl
+| 2.33 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_NamedPropertyRangeSeq.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_Property.erl
+| 3.03 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_PropertyError.erl
+| 3.15 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_PropertyErrorSeq.erl
+| 1.75 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_PropertyRange.erl
+| 1.71 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_PropertySeq.erl
+| 2.50 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosNotification_QoSAdmin.erl
+| 3.51 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_StructuredEvent.erl
+| 3.69 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_UnsupportedAdmin.erl
+| 3.60 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotification_UnsupportedQoS.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_AdminIDSeq.erl
+| 1.64 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_AdminLimit.erl
+| 2.53 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_AdminLimitExceeded.erl
+| 1.64 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_AdminNotFound.erl
+| 1.42 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ChannelIDSeq.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ChannelNotFound.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ConnectionAlreadyActive.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ConnectionAlreadyInactive.erl
+| 3.32 kB/s >>>>>>>>>>>>>>>>>>>| [  98/  98] CosNotifyChannelAdmin_ConsumerAdmin.erl
+| 2.87 kB/s >>>>>>>>>>>>>>>>>>>| [  95/  95] CosNotifyChannelAdmin_ConsumerAdmin_impl.erl
+| 3.32 kB/s >>>>>>>>>>>>>>>>>>>| [  81/  81] CosNotifyChannelAdmin_EventChannel.erl
+| 2.68 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosNotifyChannelAdmin_EventChannelFactory.erl
+| 2.02 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] CosNotifyChannelAdmin_EventChannelFactory_impl.erl
+| 3.08 kB/s >>>>>>>>>>>>>>>>>>>| [  97/  97] CosNotifyChannelAdmin_EventChannel_impl.erl
+| 1.67 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_NotConnected.erl
+| 2.95 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] CosNotifyChannelAdmin_ProxyConsumer.erl
+| 1.25 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ProxyIDSeq.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyChannelAdmin_ProxyNotFound.erl
+| 3.08 kB/s >>>>>>>>>>>>>>>>>>>| [  76/  76] CosNotifyChannelAdmin_ProxyPullConsumer.erl
+| 3.06 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] CosNotifyChannelAdmin_ProxyPullSupplier.erl
+| 3.14 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] CosNotifyChannelAdmin_ProxyPushConsumer.erl
+| 3.25 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] CosNotifyChannelAdmin_ProxyPushSupplier.erl
+| 3.18 kB/s >>>>>>>>>>>>>>>>>>>| [  70/  70] CosNotifyChannelAdmin_ProxySupplier.erl
+| 2.98 kB/s >>>>>>>>>>>>>>>>>>>| [  73/  73] CosNotifyChannelAdmin_SequenceProxyPullConsumer.erl
+| 3.28 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] CosNotifyChannelAdmin_SequenceProxyPullSupplier.erl
+| 3.04 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] CosNotifyChannelAdmin_SequenceProxyPushConsumer.erl
+| 3.16 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] CosNotifyChannelAdmin_SequenceProxyPushSupplier.erl
+| 3.03 kB/s >>>>>>>>>>>>>>>>>>>| [  73/  73] CosNotifyChannelAdmin_StructuredProxyPullConsumer.erl
+| 3.16 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] CosNotifyChannelAdmin_StructuredProxyPullSupplier.erl
+| 2.98 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] CosNotifyChannelAdmin_StructuredProxyPushConsumer.erl
+| 3.11 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] CosNotifyChannelAdmin_StructuredProxyPushSupplier.erl
+| 3.12 kB/s >>>>>>>>>>>>>>>>>>>| [  87/  87] CosNotifyChannelAdmin_SupplierAdmin.erl
+| 2.89 kB/s >>>>>>>>>>>>>>>>>>>| [  82/  82] CosNotifyChannelAdmin_SupplierAdmin_impl.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyComm_InvalidEventType.erl
+| 2.02 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] CosNotifyComm_NotifyPublish.erl
+| 2.11 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] CosNotifyComm_NotifySubscribe.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_PullConsumer.erl
+| 2.15 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosNotifyComm_PullSupplier.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] CosNotifyComm_PushConsumer.erl
+| 2.13 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_PushSupplier.erl
+| 2.11 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_SequencePullConsumer.erl
+| 3.14 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosNotifyComm_SequencePullSupplier.erl
+| 2.72 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] CosNotifyComm_SequencePushConsumer.erl
+| 2.30 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_SequencePushSupplier.erl
+| 2.32 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_StructuredPullConsumer.erl
+| 2.75 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosNotifyComm_StructuredPullSupplier.erl
+| 2.58 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] CosNotifyComm_StructuredPushConsumer.erl
+| 2.29 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyComm_StructuredPushSupplier.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_CallbackIDSeq.erl
+| 1.48 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_CallbackNotFound.erl
+| 2.12 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintExp.erl
+| 2.14 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintExpSeq.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintIDSeq.erl
+| 2.37 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintInfo.erl
+| 2.30 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintInfoSeq.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_ConstraintNotFound.erl
+| 1.63 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_DuplicateConstraintID.erl
+| 3.12 kB/s >>>>>>>>>>>>>>>>>>>| [  61/  61] CosNotifyFilter_Filter.erl
+| 2.11 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] CosNotifyFilter_FilterAdmin.erl
+| 2.29 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] CosNotifyFilter_FilterFactory.erl
+| 1.67 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] CosNotifyFilter_FilterFactory_impl.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_FilterIDSeq.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_FilterNotFound.erl
+| 2.56 kB/s >>>>>>>>>>>>>>>>>>>| [  75/  75] CosNotifyFilter_Filter_impl.erl
+| 2.39 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_InvalidConstraint.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_InvalidGrammar.erl
+| 2.39 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_InvalidValue.erl
+| 2.55 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_MappingConstraintInfo.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_MappingConstraintInfoSeq.erl
+| 2.51 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_MappingConstraintPair.erl
+| 2.34 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_MappingConstraintPairSeq.erl
+| 3.35 kB/s >>>>>>>>>>>>>>>>>>>| [  58/  58] CosNotifyFilter_MappingFilter.erl
+| 2.31 kB/s >>>>>>>>>>>>>>>>>>>| [  70/  70] CosNotifyFilter_MappingFilter_impl.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosNotifyFilter_UnsupportedFilterableData.erl
+| 2.91 kB/s >>>>>>>>>>>>>>>>>>>| [ 123/ 123] PullerConsumer_impl.erl
+| 2.41 kB/s >>>>>>>>>>>>>>>>>>>| [ 127/ 127] PullerSupplier_impl.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [ 111/ 111] PusherConsumer_impl.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] PusherSupplier_impl.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] cosNotificationApp.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] cosNotification_Filter.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [ 295/ 295] cosNotification_Grammar.erl
+| 2.58 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] cosNotification_Scanner.erl
+| 2.75 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] cosNotification_eventDB.erl
+| 6.97 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosNotification.erl
+| 2.26 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] oe_CosNotificationComm_Event.erl
+| 9.23 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosNotifyChannelAdmin.erl
+| 7.63 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosNotifyComm.erl
+| 8.56 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosNotifyFilter.erl
+| 4.89 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_cosNotificationAppComm.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosProperty/src
+| 1.04 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_ConflictingProperty.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_ConstraintNotSupported.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_FixedProperty.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_InvalidPropertyName.erl
+| 3.22 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_MultipleExceptions.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_Properties.erl
+| 2.18 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosPropertyService_PropertiesIterator.erl
+| 1.78 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] CosPropertyService_PropertiesIterator_impl.erl
+| 1.67 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_Property.erl
+| 2.33 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyDef.erl
+| 2.23 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyDefs.erl
+| 2.56 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyException.erl
+| 2.89 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyExceptions.erl
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyMode.erl
+| 2.15 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyModes.erl
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyNames.erl
+| 2.04 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosPropertyService_PropertyNamesIterator.erl
+| 1.93 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] CosPropertyService_PropertyNamesIterator_impl.erl
+| 1.59 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyNotFound.erl
+| 3.71 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] CosPropertyService_PropertySet.erl
+| 3.99 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] CosPropertyService_PropertySetDef.erl
+| 3.17 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosPropertyService_PropertySetDefFactory.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] CosPropertyService_PropertySetDefFactory_impl.erl
+| 3.32 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] CosPropertyService_PropertySetDef_impl.erl
+| 2.82 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosPropertyService_PropertySetFactory.erl
+| 2.19 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] CosPropertyService_PropertySetFactory_impl.erl
+| 1.12 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_PropertyTypes.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_ReadOnlyProperty.erl
+| 1.50 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_UnsupportedMode.erl
+| 1.59 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_UnsupportedProperty.erl
+| 1.62 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosPropertyService_UnsupportedTypeCode.erl
+| 1.97 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] cosProperty.erl
+| 9.33 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosProperty.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/cosTime/src
+| 2.09 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] CosTime_TIO.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] CosTime_TIO_impl.erl
+| 2.41 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] CosTime_TimeService.erl
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] CosTime_TimeService_impl.erl
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosTime_TimeUnavailable.erl
+| 2.38 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] CosTime_UTO.erl
+| 2.13 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] CosTime_UTO_impl.erl
+| 2.27 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] CosTimerEvent_TimerEventHandler.erl
+| 3.34 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] CosTimerEvent_TimerEventHandler_impl.erl
+| 2.31 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] CosTimerEvent_TimerEventService.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] CosTimerEvent_TimerEventService_impl.erl
+| 1.90 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] CosTimerEvent_TimerEventT.erl
+| 1.35 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] TimeBase_IntervalT.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] TimeBase_UtcT.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] cosTime.erl
+| 5.82 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosTime.erl
+| 5.24 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CosTimerEvent.erl
+| 3.01 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_TimeBase.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/crypto/src
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [ 163/ 163] crypto.erl
+| 0.72 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] crypto_app.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] crypto_server.erl
+| 2.62 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] crypto_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/debugger/src
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] dbg_debugged.erl
+| 1.90 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] dbg_icmd.erl
+| 1.65 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] dbg_idb.erl
+| 2.63 kB/s >>>>>>>>>>>>>>>>>>>| [  91/  91] dbg_ieval.erl
+| 2.48 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] dbg_iload.erl
+| 2.82 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] dbg_iserver.erl
+| 1.30 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] dbg_ui_break.erl
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] dbg_ui_break_win.erl
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] dbg_ui_edit.erl
+| 4.59 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] dbg_ui_edit_win.erl
+| 2.35 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] dbg_ui_filedialog_win.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] dbg_ui_interpret.erl
+| 2.14 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] dbg_ui_mon.erl
+| 2.79 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] dbg_ui_mon_win.erl
+| 2.44 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] dbg_ui_settings.erl
+| 2.71 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] dbg_ui_trace.erl
+| 2.73 kB/s >>>>>>>>>>>>>>>>>>>| [  94/  94] dbg_ui_trace_win.erl
+| 2.93 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] dbg_ui_view.erl
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] dbg_ui_win.erl
+| 2.05 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] dbg_ui_winman.erl
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] dbg_wx_break.erl
+| 0.04 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] dbg_wx_break_win.erl
+| 0.55 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] dbg_wx_code.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] dbg_wx_filedialog_win.erl
+| 0.48 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] dbg_wx_interpret.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] dbg_wx_mon.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] dbg_wx_mon_win.erl
+| 0.44 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] dbg_wx_settings.erl
+| 0.42 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] dbg_wx_src_view.erl
+| 2.94 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] dbg_wx_trace.erl
+| 1.63 kB/s >>>>>>>>>>>>>>>>>>>| [  76/  76] dbg_wx_trace_win.erl
+| 3.03 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] dbg_wx_view.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] dbg_wx_win.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] dbg_wx_winman.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] debugger.erl
+| 1.54 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] i.erl
+| 1.90 kB/s >>>>>>>>>>>>>>>>>>>| [  84/  84] int.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/dialyzer/src
+| 2.64 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] dialyzer.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] dialyzer_analysis_callgraph.erl
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] dialyzer_behaviours.erl
+| 2.02 kB/s >>>>>>>>>>>>>>>>>>>| [ 122/ 122] dialyzer_callgraph.erl
+| 2.30 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] dialyzer_cl.erl
+| 4.51 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] dialyzer_cl_parse.erl
+| 2.19 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] dialyzer_codeserver.erl
+| 2.31 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] dialyzer_contracts.erl
+| 2.52 kB/s >>>>>>>>>>>>>>>>>>>| [ 211/ 211] dialyzer_dataflow.erl
+| 2.20 kB/s >>>>>>>>>>>>>>>>>>>| [  58/  58] dialyzer_dep.erl
+| 0.81 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] dialyzer_explanation.erl
+| 3.00 kB/s >>>>>>>>>>>>>>>>>>>| [  62/  62] dialyzer_gui.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  61/  61] dialyzer_gui_wx.erl
+| 2.99 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] dialyzer_options.erl
+| 2.30 kB/s >>>>>>>>>>>>>>>>>>>| [  94/  94] dialyzer_plt.erl
+| 3.62 kB/s >>>>>>>>>>>>>>>>>>>| [ 168/ 168] dialyzer_races.erl
+| 2.66 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] dialyzer_succ_typings.erl
+| 2.90 kB/s >>>>>>>>>>>>>>>>>>>| [ 198/ 198] dialyzer_typesig.erl
+| 2.67 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] dialyzer_utils.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/edoc/src
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] edoc.erl
+| 1.25 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] edoc_data.erl
+| 1.71 kB/s >>>>>>>>>>>>>>>>>>>| [  47/  47] edoc_doclet.erl
+| 1.35 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] edoc_extract.erl
+| 1.52 kB/s >>>>>>>>>>>>>>>>>>>| [ 101/ 101] edoc_layout.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] edoc_lib.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] edoc_macros.erl
+| 1.81 kB/s >>>>>>>>>>>>>>>>>>>| [ 432/ 432] edoc_parser.erl
+| 1.57 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] edoc_refs.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] edoc_report.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] edoc_run.erl
+| 2.04 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] edoc_scanner.erl
+| 1.95 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] edoc_tags.erl
+| 1.83 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] edoc_types.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] edoc_wiki.erl
+| 1.59 kB/s >>>>>>>>>>>>>>>>>>>| [  82/  82] otpsgml_layout.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/et/src
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] et.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  66/  66] et_collector.erl
+| 2.59 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] et_gs_contents_viewer.erl
+| 2.59 kB/s >>>>>>>>>>>>>>>>>>>| [  83/  83] et_gs_viewer.erl
+| 4.40 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] et_selector.erl
+| 1.15 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] et_viewer.erl
+| 1.50 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] et_wx_contents_viewer.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [ 111/ 111] et_wx_viewer.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/eunit/src
+| 0.68 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] eunit.erl
+| 2.01 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] eunit_autoexport.erl
+| 1.78 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] eunit_data.erl
+| 2.35 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] eunit_lib.erl
+| 1.48 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] eunit_listener.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [  52/  52] eunit_proc.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] eunit_serial.erl
+| 1.30 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] eunit_server.erl
+| 2.67 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] eunit_striptests.erl
+| 2.20 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] eunit_surefire.erl
+| 2.84 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] eunit_test.erl
+| 1.88 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] eunit_tests.erl
+| 1.83 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] eunit_tty.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/gs/src
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] gs.erl
+| 1.75 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] gs_frontend.erl
+| 2.87 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] gs_make.erl
+| 2.14 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] gs_packer.erl
+| 4.94 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] gs_widgets.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  72/  72] gse.erl
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] gstk.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_arc.erl
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_button.erl
+| 2.37 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] gstk_canvas.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] gstk_checkbutton.erl
+| 1.86 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] gstk_db.erl
+| 2.21 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] gstk_editor.erl
+| 2.04 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_entry.erl
+| 2.88 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] gstk_font.erl
+| 1.83 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] gstk_frame.erl
+| 0.08 kB/s >>>>>>>>>>>>>>>>>>>| [ 167/ 167] gstk_generic.erl
+| 2.16 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] gstk_grid.erl
+| 2.56 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] gstk_gridline.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] gstk_gs.erl
+| 1.97 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] gstk_image.erl
+| 1.63 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] gstk_label.erl
+| 2.24 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] gstk_line.erl
+| 2.49 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] gstk_listbox.erl
+| 1.93 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] gstk_menu.erl
+| 1.85 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_menubar.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] gstk_menubutton.erl
+| 2.54 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] gstk_menuitem.erl
+| 1.78 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_oval.erl
+| 2.06 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] gstk_polygon.erl
+| 2.19 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] gstk_port_handler.erl
+| 2.46 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] gstk_radiobutton.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_rectangle.erl
+| 2.14 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_scale.erl
+| 1.98 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] gstk_text.erl
+| 6.51 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] gstk_widgets.erl
+| 1.90 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] gstk_window.erl
+| 1.68 kB/s >>>>>>>>>>>>>>>>>>>| [  51/  51] tcl2erl.erl
+| 2.26 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] tool_file_dialog.erl
+| 2.22 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] tool_utils.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ic/src
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] ic.erl
+| 1.83 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] ic_array_java.erl
+| 3.74 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] ic_attribute_java.erl
+| 2.94 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] ic_cbe.erl
+| 2.53 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] ic_cclient.erl
+| 1.97 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] ic_code.erl
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] ic_codegen.erl
+| 1.28 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] ic_constant_java.erl
+| 3.30 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] ic_cserver.erl
+| 2.58 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] ic_enum_java.erl
+| 3.77 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] ic_erl_template.erl
+| 2.45 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] ic_erlbe.erl
+| 2.92 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ic_error.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] ic_fetch.erl
+| 2.13 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ic_file.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] ic_forms.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  47/  47] ic_genobj.erl
+| 2.72 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] ic_java_type.erl
+| 2.79 kB/s >>>>>>>>>>>>>>>>>>>| [  68/  68] ic_jbe.erl
+| 1.86 kB/s >>>>>>>>>>>>>>>>>>>| [  73/  73] ic_noc.erl
+| 2.36 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] ic_options.erl
+| 1.45 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] ic_plainbe.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [  77/  77] ic_pp.erl
+| 1.91 kB/s >>>>>>>>>>>>>>>>>>>| [ 137/ 137] ic_pragma.erl
+| 4.58 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ic_sequence_java.erl
+| 2.58 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] ic_struct_java.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ic_symtab.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] ic_union_java.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] ic_util.erl
+| 2.43 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] icenum.erl
+| 2.09 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] iceval.erl
+| 1.90 kB/s >>>>>>>>>>>>>>>>>>>| [ 934/ 934] icparse.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] icpreproc.erl
+| 2.24 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] icscan.erl
+| 3.14 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] icstruct.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] ictk.erl
+| 1.95 kB/s >>>>>>>>>>>>>>>>>>>| [  84/  84] ictype.erl
+| 3.59 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] icunion.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/inets/src
+| 2.26 kB/s >>>>>>>>>>>>>>>>>>>| [ 109/ 109] ftp.erl
+| 2.18 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] ftp_progress.erl
+| 4.78 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] ftp_response.erl
+| 1.99 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] ftp_sup.erl
+| 0.52 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] http.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] http_uri.erl
+| 2.15 kB/s >>>>>>>>>>>>>>>>>>>| [  70/  70] httpc.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] httpc_cookie.erl
+| 1.78 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] httpc_handler.erl
+| 1.44 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] httpc_handler_sup.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  68/  68] httpc_manager.erl
+| 1.44 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] httpc_profile_sup.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] httpc_request.erl
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] httpc_response.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] httpc_sup.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] http_chunk.erl
+| 5.94 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] http_request.erl
+| 6.35 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] http_response.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] http_transport.erl
+| 1.71 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] http_util.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] httpd.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] httpd_acceptor.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] httpd_acceptor_sup.erl
+| 2.72 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] httpd_cgi.erl
+| 2.16 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] httpd_conf.erl
+| 1.92 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] httpd_esi.erl
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] httpd_example.erl
+| 2.38 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] httpd_file.erl
+| 2.79 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] httpd_instance_sup.erl
+| 2.49 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] httpd_log.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] httpd_manager.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] httpd_misc_sup.erl
+| 2.10 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] httpd_request.erl
+| 1.89 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] httpd_request_handler.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] httpd_response.erl
+| 1.98 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] httpd_script_env.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] httpd_socket.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] httpd_sup.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] httpd_util.erl
+| 1.98 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] mod_actions.erl
+| 1.81 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] mod_alias.erl
+| 1.67 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] mod_auth.erl
+| 1.82 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] mod_auth_dets.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] mod_auth_mnesia.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] mod_auth_plain.erl
+| 1.63 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] mod_auth_server.erl
+| 1.81 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] mod_browser.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] mod_cgi.erl
+| 2.67 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] mod_dir.erl
+| 2.25 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] mod_disk_log.erl
+| 2.16 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] mod_esi.erl
+| 2.19 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] mod_get.erl
+| 2.46 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] mod_head.erl
+| 2.06 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] mod_htaccess.erl
+| 1.85 kB/s >>>>>>>>>>>>>>>>>>>| [  46/  46] mod_include.erl
+| 2.13 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] mod_log.erl
+| 2.35 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] mod_range.erl
+| 2.19 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] mod_responsecontrol.erl
+| 1.43 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] mod_security.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [  50/  50] mod_security_server.erl
+| 1.47 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] mod_trace.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] inets.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] inets_app.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] inets_regexp.erl
+| 1.47 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] inets_service.erl
+| 1.46 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] inets_sup.erl
+| 0.46 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] tftp.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] tftp_binary.erl
+| 2.66 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] tftp_engine.erl
+| 1.71 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] tftp_file.erl
+| 2.63 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] tftp_lib.erl
+| 1.10 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] tftp_logger.erl
+| 1.33 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] tftp_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/kernel/src
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [  72/  72] application.erl
+| 2.03 kB/s >>>>>>>>>>>>>>>>>>>| [ 117/ 117] application_controller.erl
+| 1.30 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] application_master.erl
+| 2.46 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] application_starter.erl
+| 1.25 kB/s >>>>>>>>>>>>>>>>>>>| [  52/  52] auth.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [ 112/ 112] code.erl
+| 1.24 kB/s >>>>>>>>>>>>>>>>>>>| [ 125/ 125] code_server.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [ 206/ 206] disk_log.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [ 126/ 126] disk_log_1.erl
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] disk_log_server.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] disk_log_sup.erl
+| 1.99 kB/s >>>>>>>>>>>>>>>>>>>| [ 105/ 105] dist_ac.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] dist_util.erl
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] erl_boot_server.erl
+| 1.50 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] erl_ddll.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] erl_distribution.erl
+| 1.10 kB/s >>>>>>>>>>>>>>>>>>>| [  61/  61] erl_epmd.erl
+| 0.89 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] erl_reply.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] error_handler.erl
+| 1.33 kB/s >>>>>>>>>>>>>>>>>>>| [  70/  70] error_logger.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] erts_debug.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [ 152/ 152] file.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] file_io_server.erl
+| 1.04 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] file_server.erl
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] gen_sctp.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] gen_tcp.erl
+| 0.76 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] gen_udp.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [ 185/ 185] global.erl
+| 1.89 kB/s >>>>>>>>>>>>>>>>>>>| [ 104/ 104] global_group.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] global_search.erl
+| 1.32 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] group.erl
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] heart.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [ 100/ 100] hipe_unified_loader.erl
+| 1.45 kB/s >>>>>>>>>>>>>>>>>>>| [ 177/ 177] inet.erl
+| 0.53 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] inet6_sctp.erl
+| 0.68 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] inet6_tcp.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] inet6_tcp_dist.erl
+| 0.55 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] inet6_udp.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] inet_config.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [ 191/ 191] inet_db.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [  66/  66] inet_dns.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] inet_gethost_native.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] inet_hosts.erl
+| 1.09 kB/s >>>>>>>>>>>>>>>>>>>| [ 107/ 107] inet_parse.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] inet_res.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] inet_sctp.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] inet_tcp.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] inet_tcp_dist.erl
+| 0.81 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] inet_udp.erl
+| 1.89 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] kernel.erl
+| 0.91 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] kernel_config.erl
+| 0.37 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] net.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] net_adm.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [ 145/ 145] net_kernel.erl
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] os.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] packages.erl
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [  57/  57] pg2.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] ram_file.erl
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [  91/  91] rpc.erl
+| 0.81 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] seq_trace.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] standard_error.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [  53/  53] user.erl
+| 1.46 kB/s >>>>>>>>>>>>>>>>>>>| [  57/  57] user_drv.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] user_sup.erl
+| 1.68 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] wrap_log_reader.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/mnesia/src
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [ 250/ 250] mnesia.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] mnesia_backup.erl
+| 1.57 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] mnesia_bup.erl
+| 1.58 kB/s >>>>>>>>>>>>>>>>>>>| [ 105/ 105] mnesia_checkpoint.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] mnesia_checkpoint_sup.erl
+| 1.64 kB/s >>>>>>>>>>>>>>>>>>>| [ 126/ 126] mnesia_controller.erl
+| 1.64 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] mnesia_dumper.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] mnesia_event.erl
+| 1.59 kB/s >>>>>>>>>>>>>>>>>>>| [  99/  99] mnesia_frag.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] mnesia_frag_hash.erl
+| 1.86 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] mnesia_frag_old_hash.erl
+| 1.15 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] mnesia_index.erl
+| 1.46 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] mnesia_kernel_sup.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] mnesia_late_loader.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [ 170/ 170] mnesia_lib.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] mnesia_loader.erl
+| 1.62 kB/s >>>>>>>>>>>>>>>>>>>| [ 102/ 102] mnesia_locker.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  96/  96] mnesia_log.erl
+| 1.96 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] mnesia_monitor.erl
+| 1.78 kB/s >>>>>>>>>>>>>>>>>>>| [  89/  89] mnesia_recover.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] mnesia_registry.erl
+| 2.06 kB/s >>>>>>>>>>>>>>>>>>>| [ 187/ 187] mnesia_schema.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] mnesia_snmp_hook.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] mnesia_snmp_sup.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] mnesia_sp.erl
+| 1.62 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] mnesia_subscr.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] mnesia_sup.erl
+| 1.15 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] mnesia_text.erl
+| 1.92 kB/s >>>>>>>>>>>>>>>>>>>| [ 139/ 139] mnesia_tm.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/observer/src
+| 1.35 kB/s >>>>>>>>>>>>>>>>>>>| [ 216/ 216] crashdump_viewer.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [ 136/ 136] crashdump_viewer_html.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] etop.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] etop_gui.erl
+| 0.85 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] etop_tr.erl
+| 1.24 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] etop_txt.erl
+| 1.12 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] multitrace.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [ 123/ 123] ttb.erl
+| 1.09 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] ttb_et.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/odbc/src
+| 1.95 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] odbc.erl
+| 0.52 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] odbc_app.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] odbc_debug.erl
+| 1.88 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] odbc_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/orber/src
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] OrberApp_IFR.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] OrberApp_IFR_impl.erl
+| 1.04 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] any.erl
+| 2.39 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] cdr_decode.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  62/  62] cdr_encode.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] cdrlib.erl
+| 1.94 kB/s >>>>>>>>>>>>>>>>>>>| [ 134/ 134] corba.erl
+| 3.77 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] corba_boa.erl
+| 0.66 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] corba_nvlist.erl
+| 1.42 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] corba_object.erl
+|>>>>>>>>>>>>>>>>>>>  0.93 kB/s| [  35/  44] corba_request.erl
+=INFO REPORT==== 20-Jan-2015::10:15:54 ===
+/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/orber/src/corba_request.erl:92:29 Parse error before {
+| 1.06 kB/s >>>>>>>>>>>>>>     | [  37/  44] corba_request.erl
+=INFO REPORT==== 20-Jan-2015::10:15:55 ===
+/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/orber/src/corba_request.erl:331:2 Parse error before _
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] corba_request.erl
+| 0.40 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] erlang_binary.erl
+| 0.64 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] erlang_pid.erl
+| 0.61 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] erlang_port.erl
+| 0.58 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] erlang_ref.erl
+| 2.17 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] fixed.erl
+| 2.54 kB/s >>>>>>>>>>>>>>>>>>>| [  77/  77] iop_ior.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_CORBA.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_OrberIFR.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] oe_erlang.erl
+| 0.85 kB/s >>>>>>>>>>>>>>>>>>>| [ 145/ 145] orber.erl
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] orber_acl.erl
+| 1.62 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] orber_diagnostics.erl
+| 2.72 kB/s >>>>>>>>>>>>>>>>>>>| [ 121/ 121] orber_env.erl
+| 2.50 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] orber_exceptions.erl
+| 0.59 kB/s >>>>>>>>>>>>>>>>>>>| [ 417/ 417] orber_ifr.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] orber_ifr_aliasdef.erl
+| 3.07 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] orber_ifr_arraydef.erl
+| 2.42 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] orber_ifr_attributedef.erl
+| 3.47 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] orber_ifr_constantdef.erl
+| 2.87 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] orber_ifr_contained.erl
+| 2.28 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] orber_ifr_container.erl
+| 3.76 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] orber_ifr_enumdef.erl
+| 3.83 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] orber_ifr_exceptiondef.erl
+| 2.59 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] orber_ifr_fixeddef.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] orber_ifr_idltype.erl
+| 4.49 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] orber_ifr_interfacedef.erl
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] orber_ifr_irobject.erl
+| 3.74 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] orber_ifr_moduledef.erl
+| 3.50 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] orber_ifr_operationdef.erl
+| 3.87 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] orber_ifr_orb.erl
+| 2.21 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] orber_ifr_primitivedef.erl
+| 3.61 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] orber_ifr_repository.erl
+| 3.17 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] orber_ifr_sequencedef.erl
+| 2.40 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] orber_ifr_stringdef.erl
+| 3.49 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] orber_ifr_structdef.erl
+| 0.61 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] orber_ifr_typecode.erl
+| 4.24 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] orber_ifr_typedef.erl
+| 4.01 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] orber_ifr_uniondef.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] orber_ifr_utils.erl
+| 2.39 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] orber_ifr_wstringdef.erl
+| 2.80 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] orber_iiop.erl
+| 1.58 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] orber_iiop_inproxy.erl
+| 2.67 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] orber_iiop_inrequest.erl
+| 1.00 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] orber_iiop_insup.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] orber_iiop_net.erl
+| 1.65 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] orber_iiop_net_accept.erl
+| 2.30 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] orber_iiop_outproxy.erl
+| 1.05 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] orber_iiop_outsup.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] orber_iiop_pm.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] orber_iiop_socketsup.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] orber_iiop_tracer.erl
+| 1.33 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] orber_iiop_tracer_silent.erl
+| 1.28 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] orber_iiop_tracer_stealth.erl
+| 1.27 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] orber_initial_references.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] orber_interceptors.erl
+| 1.44 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] orber_objectkeys.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [  91/  91] orber_pi.erl
+| 0.63 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] orber_request_number.erl
+| 2.17 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] orber_socket.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] orber_tb.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] orber_tc.erl
+| 3.41 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] orber_typedefs.erl
+| 2.77 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] orber_web.erl
+| 1.09 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] orber_web_server.erl
+Error: Processing failed for some files, check the errors
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/os_mon/src
+| 1.41 kB/s >>>>>>>>>>>>>>>>>>>| [  88/  88] cpu_sup.erl
+| 1.05 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] disksup.erl
+| 1.66 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] memsup.erl
+| 0.65 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] nteventlog.erl
+| 1.71 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] os_mon.erl
+| 0.81 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] os_mon_mib.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] os_mon_sysinfo.erl
+| 0.88 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] os_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/otp_mibs/src
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] otp_mib.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/parsetools/src
+| 1.21 kB/s >>>>>>>>>>>>>>>>>>>| [ 151/ 151] leex.erl
+| 1.43 kB/s >>>>>>>>>>>>>>>>>>>| [ 242/ 242] yecc.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [ 130/ 130] yeccparser.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] yeccscan.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/percept/src
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [  41/  41] egd.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] egd_font.erl
+| 1.12 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] egd_png.erl
+| 2.05 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] egd_primitives.erl
+| 1.13 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] egd_render.erl
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] percept.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] percept_analyzer.erl
+| 1.43 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] percept_db.erl
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] percept_graph.erl
+| 1.65 kB/s >>>>>>>>>>>>>>>>>>>| [  66/  66] percept_html.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] percept_image.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/public_key/src
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] pubkey_cert.erl
+| 2.74 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] pubkey_cert_records.erl
+| 1.27 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] pubkey_crypto.erl
+| 1.04 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] pubkey_pem.erl
+| 1.52 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] public_key.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/runtime_tools/src
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [ 139/ 139] dbg.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] erts_alloc_config.erl
+| 1.43 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] inviso_as_lib.erl
+| 1.13 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] inviso_autostart.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] inviso_autostart_server.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [ 184/ 184] inviso_rt.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] inviso_rt_lib.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [ 101/ 101] inviso_rt_meta.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] observer_backend.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] percept_profile.erl
+| 0.74 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] runtime_tools.erl
+| 1.33 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] runtime_tools_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/sasl/src
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] alarm_handler.erl
+| 1.03 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] erlsrv.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] format_lib_supp.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] misc_supp.erl
+| 1.03 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] overload.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [  84/  84] rb.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] rb_format_supp.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [ 121/ 121] release_handler.erl
+| 1.35 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] release_handler_1.erl
+| 0.82 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] sasl.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] sasl_report.erl
+| 0.48 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] sasl_report_file_h.erl
+| 0.37 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] sasl_report_tty_h.erl
+| 0.47 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] si.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] si_sasl_supp.erl
+| 0.51 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] systools.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] systools_lib.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [ 150/ 150] systools_make.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] systools_rc.erl
+| 1.35 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] systools_relup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/snmp/src
+| 0.89 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] snmp_community_mib.erl
+| 0.60 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] snmp_framework_mib.erl
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [  73/  73] snmp_generic.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] snmp_generic_mnesia.erl
+| 0.64 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] snmp_index.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [  50/  50] snmp_notification_mib.erl
+| 0.96 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] snmp_shadow_table.erl
+| 0.81 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] snmp_standard_mib.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  68/  68] snmp_target_mib.erl
+| 1.28 kB/s >>>>>>>>>>>>>>>>>>>| [ 100/ 100] snmp_user_based_sm_mib.erl
+| 1.28 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] snmp_view_based_acm_mib.erl
+| 0.51 kB/s >>>>>>>>>>>>>>>>>>>| [ 119/ 119] snmpa.erl
+| 1.24 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] snmpa_acm.erl
+| 1.58 kB/s >>>>>>>>>>>>>>>>>>>| [ 270/ 270] snmpa_agent.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] snmpa_agent_sup.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] snmpa_app.erl
+| 0.82 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpa_authentication_service.erl
+| 1.28 kB/s >>>>>>>>>>>>>>>>>>>| [ 106/ 106] snmpa_conf.erl
+| 1.03 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] snmpa_discovery_handler.erl
+| 0.89 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] snmpa_discovery_handler_default.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] snmpa_error.erl
+| 0.56 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] snmpa_error_io.erl
+| 0.66 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] snmpa_error_logger.erl
+| 0.79 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpa_error_report.erl
+| 1.24 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] snmpa_general_db.erl
+| 1.43 kB/s >>>>>>>>>>>>>>>>>>>| [ 112/ 112] snmpa_local_db.erl
+| 1.30 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] snmpa_mib.erl
+| 1.50 kB/s >>>>>>>>>>>>>>>>>>>| [  82/  82] snmpa_mib_data.erl
+| 1.23 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] snmpa_mib_lib.erl
+| 1.68 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] snmpa_misc_sup.erl
+| 1.69 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] snmpa_mpd.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [ 109/ 109] snmpa_net_if.erl
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] snmpa_net_if_filter.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpa_network_interface.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] snmpa_network_interface_filter.erl
+| 0.78 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] snmpa_notification_delivery_info_receiver.erl
+| 0.77 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpa_notification_filter.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] snmpa_set.erl
+| 1.54 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] snmpa_set_lib.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpa_set_mechanism.erl
+| 1.31 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] snmpa_supervisor.erl
+| 1.09 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] snmpa_svbl.erl
+| 1.33 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] snmpa_symbolic_store.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  68/  68] snmpa_target_cache.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] snmpa_trap.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [  53/  53] snmpa_usm.erl
+| 1.46 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] snmpa_vacm.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [ 121/ 121] snmp.erl
+| 0.90 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] snmp_app.erl
+| 0.91 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] snmp_app_sup.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] snmpc.erl
+| 1.80 kB/s >>>>>>>>>>>>>>>>>>>| [ 125/ 125] snmpc_lib.erl
+| 0.96 kB/s >>>>>>>>>>>>>>>>>>>| [1143/1143] snmpc_mib_gram.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] snmpc_mib_to_hrl.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] snmpc_misc.erl
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] snmpc_tok.erl
+| 0.84 kB/s >>>>>>>>>>>>>>>>>>>| [ 165/ 165] snmpm.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] snmpm_conf.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [ 254/ 254] snmpm_config.erl
+| 0.77 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] snmpm_misc_sup.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  69/  69] snmpm_mpd.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] snmpm_net_if.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] snmpm_net_if_filter.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpm_network_interface.erl
+| 1.27 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] snmpm_network_interface_filter.erl
+| 1.81 kB/s >>>>>>>>>>>>>>>>>>>| [ 164/ 164] snmpm_server.erl
+| 0.69 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] snmpm_server_sup.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] snmpm_supervisor.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpm_user.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] snmpm_user_default.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] snmpm_user_old.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] snmpm_usm.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] snmp_conf.erl
+| 1.79 kB/s >>>>>>>>>>>>>>>>>>>| [ 175/ 175] snmp_config.erl
+| 1.13 kB/s >>>>>>>>>>>>>>>>>>>| [  80/  80] snmp_log.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] snmp_mini_mib.erl
+| 1.05 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] snmp_misc.erl
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [  53/  53] snmp_note_store.erl
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [  83/  83] snmp_pdus.erl
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  47/  47] snmp_usm.erl
+| 1.03 kB/s >>>>>>>>>>>>>>>>>>>| [  17/  17] snmp_verbosity.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssh/src
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [  63/  63] DSS.erl
+| 1.09 kB/s >>>>>>>>>>>>>>>>>>>| [ 163/ 163] PKCS-1.erl
+| 0.92 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] ssh.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] ssh_acceptor.erl
+| 1.21 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ssh_acceptor_sup.erl
+| 0.44 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] ssh_app.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] ssh_auth.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] ssh_bits.erl
+| 1.23 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] ssh_channel.erl
+| 0.65 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] ssh_channel_sup.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] ssh_cli.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] ssh_cm.erl
+| 1.99 kB/s >>>>>>>>>>>>>>>>>>>| [  74/  74] ssh_connection.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] ssh_connection_controler.erl
+| 1.47 kB/s >>>>>>>>>>>>>>>>>>>| [  52/  52] ssh_connection_handler.erl
+| 2.20 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] ssh_connection_manager.erl
+| 0.75 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] ssh_dsa.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [  40/  40] ssh_file.erl
+| 0.40 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ssh_io.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] ssh_math.erl
+| 0.35 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] ssh_no_io.erl
+| 0.64 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] ssh_rsa.erl
+| 1.13 kB/s >>>>>>>>>>>>>>>>>>>| [ 122/ 122] ssh_sftp.erl
+| 1.38 kB/s >>>>>>>>>>>>>>>>>>>| [  59/  59] ssh_sftpd.erl
+| 0.37 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] ssh_sftpd_file.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] ssh_sftpd_file_api.erl
+| 0.75 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] ssh_shell.erl
+| 0.76 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] ssh_ssh.erl
+| 0.47 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] ssh_sshd.erl
+| 0.82 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] ssh_subsystem_sup.erl
+| 0.73 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ssh_sup.erl
+| 0.89 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] ssh_system_sup.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [  95/  95] ssh_transport.erl
+| 0.59 kB/s >>>>>>>>>>>>>>>>>>>| [  16/  16] ssh_userreg.erl
+| 1.77 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] ssh_xfer.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] sshc_sup.erl
+| 1.45 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] sshd_sup.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src
+|>                    0.13 kB/s| [   4/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:53 ===
+/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl: Include file not found: net_address.hrl
+|>>                   0.19 kB/s| [   6/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:53 ===
+/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl: Include file not found: dist.hrl
+|>>                   0.20 kB/s| [   7/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:53 ===
+/Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl: Include file not found: dist_util.hrl
+|>>>>>>>              0.41 kB/s| [  16/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:55 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+|>>>>>>>>>>>>         0.59 kB/s| [  19/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?trace/2 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?trace/2 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?trace/2 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?trace/2 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?trace/2 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+|>>>>>>>>>>>>>>>>>    0.85 kB/s| [  21/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+| 0.98 kB/s >>>>>>>>>>         | [  24/  36] inet_ssl_dist.erl
+=WARNING REPORT==== 20-Jan-2015::10:49:56 ===
+Cannot find body for macro ?shutdown/1 in /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/ssl/src/inet_ssl_dist.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] inet_ssl_dist.erl
+| 1.04 kB/s >>>>>>>>>>>>>>>>>>>| [  58/  58] ssl.erl
+| 1.53 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] ssl_alert.erl
+| 0.25 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] ssl_app.erl
+| 0.54 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] ssl_base64.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] ssl_broker.erl
+| 0.76 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] ssl_broker_sup.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] ssl_certificate.erl
+| 0.44 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] ssl_certificate_db.erl
+| 2.02 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] ssl_cipher.erl
+| 1.60 kB/s >>>>>>>>>>>>>>>>>>>| [ 105/ 105] ssl_connection.erl
+| 1.19 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] ssl_connection_sup.erl
+| 0.47 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] ssl_debug.erl
+| 1.58 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] ssl_handshake.erl
+| 1.26 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] ssl_manager.erl
+| 1.00 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] ssl_pem.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] ssl_pkix.erl
+| 0.88 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] ssl_prim.erl
+| 1.94 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] ssl_record.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [ 104/ 104] ssl_server.erl
+| 1.42 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] ssl_session.erl
+| 0.43 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] ssl_session_cache.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] ssl_session_cache_api.erl
+| 4.21 kB/s >>>>>>>>>>>>>>>>>>>| [   3/   3] ssl_ssl2.erl
+| 1.76 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] ssl_ssl3.erl
+| 1.39 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] ssl_sup.erl
+| 1.45 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] ssl_tls1.erl
+Error: Processing failed for some files, check the errors
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/stdlib/src
+| 1.57 kB/s >>>>>>>>>>>>>>>>>>>| [ 195/ 195] array.erl
+| 0.77 kB/s >>>>>>>>>>>>>>>>>>>| [  34/  34] base64.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [ 149/ 149] beam_lib.erl
+| 0.67 kB/s >>>>>>>>>>>>>>>>>>>| [  85/  85] c.erl
+| 1.46 kB/s >>>>>>>>>>>>>>>>>>>| [  97/  97] calendar.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [ 243/ 243] dets.erl
+| 0.96 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] dets_server.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [   5/   5] dets_sup.erl
+| 1.01 kB/s >>>>>>>>>>>>>>>>>>>| [ 188/ 188] dets_utils.erl
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [ 142/ 142] dets_v8.erl
+| 1.36 kB/s >>>>>>>>>>>>>>>>>>>| [ 231/ 231] dets_v9.erl
+| 0.90 kB/s >>>>>>>>>>>>>>>>>>>| [  87/  87] dict.erl
+| 1.10 kB/s >>>>>>>>>>>>>>>>>>>| [ 124/ 124] digraph.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  60/  60] digraph_utils.erl
+| 1.50 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] edlin.erl
+| 0.68 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] edlin_expand.erl
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [  95/  95] epp.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] erl_bits.erl
+| 1.00 kB/s >>>>>>>>>>>>>>>>>>>| [  19/  19] erl_compile.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] erl_eval.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [  68/  68] erl_expand_records.erl
+| 3.47 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] erl_internal.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [ 251/ 251] erl_lint.erl
+| 1.49 kB/s >>>>>>>>>>>>>>>>>>>| [1157/1157] erl_parse.erl
+|14.75 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] erl_posix_msg.erl
+| 0.77 kB/s >>>>>>>>>>>>>>>>>>>| [ 131/ 131] erl_pp.erl
+| 1.61 kB/s >>>>>>>>>>>>>>>>>>>| [ 135/ 135] erl_scan.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [ 113/ 113] erl_tar.erl
+| 0.82 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] error_logger_file_h.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [  27/  27] error_logger_tty_h.erl
+| 1.10 kB/s >>>>>>>>>>>>>>>>>>>| [  37/  37] escript.erl
+| 1.10 kB/s >>>>>>>>>>>>>>>>>>>| [ 117/ 117] ets.erl
+| 1.29 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] eval_bits.erl
+| 1.03 kB/s >>>>>>>>>>>>>>>>>>>| [ 147/ 147] file_sorter.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [  76/  76] filelib.erl
+| 1.27 kB/s >>>>>>>>>>>>>>>>>>>| [  77/  77] filename.erl
+| 0.68 kB/s >>>>>>>>>>>>>>>>>>>| [ 118/ 118] gb_sets.erl
+| 0.77 kB/s >>>>>>>>>>>>>>>>>>>| [  75/  75] gb_trees.erl
+| 0.76 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] gen.erl
+| 1.12 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] gen_event.erl
+| 1.34 kB/s >>>>>>>>>>>>>>>>>>>| [  48/  48] gen_fsm.erl
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [  63/  63] gen_server.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [ 120/ 120] io.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  86/  86] io_lib.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] io_lib_format.erl
+| 1.18 kB/s >>>>>>>>>>>>>>>>>>>| [  50/  50] io_lib_fread.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [  57/  57] io_lib_pretty.erl
+| 0.93 kB/s >>>>>>>>>>>>>>>>>>>| [  45/  45] lib.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [ 292/ 292] lists.erl
+| 0.69 kB/s >>>>>>>>>>>>>>>>>>>| [  32/  32] log_mf_h.erl
+| 0.35 kB/s >>>>>>>>>>>>>>>>>>>| [   4/   4] math.erl
+| 1.47 kB/s >>>>>>>>>>>>>>>>>>>| [  94/  94] ms_transform.erl
+| 1.48 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] orddict.erl
+| 1.25 kB/s >>>>>>>>>>>>>>>>>>>| [  45/  45] ordsets.erl
+| 5.19 kB/s >>>>>>>>>>>>>>>>>>>| [  10/  10] otp_internal.erl
+| 0.55 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] pg.erl
+| 0.49 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] pool.erl
+| 0.73 kB/s >>>>>>>>>>>>>>>>>>>| [ 103/ 103] proc_lib.erl
+| 0.90 kB/s >>>>>>>>>>>>>>>>>>>| [  57/  57] proplists.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [ 276/ 276] qlc.erl
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [ 244/ 244] qlc_pt.erl
+| 0.71 kB/s >>>>>>>>>>>>>>>>>>>| [  75/  75] queue.erl
+| 0.47 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] random.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  43/  43] re.erl
+| 0.92 kB/s >>>>>>>>>>>>>>>>>>>| [  47/  47] regexp.erl
+| 0.87 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] sets.erl
+| 0.90 kB/s >>>>>>>>>>>>>>>>>>>| [ 143/ 143] shell.erl
+| 0.28 kB/s >>>>>>>>>>>>>>>>>>>| [  65/  65] shell_default.erl
+| 0.50 kB/s >>>>>>>>>>>>>>>>>>>| [  39/  39] slave.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [ 287/ 287] sofs.erl
+| 0.75 kB/s >>>>>>>>>>>>>>>>>>>| [  92/  92] string.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  79/  79] supervisor.erl
+| 0.65 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] supervisor_bridge.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [  64/  64] sys.erl
+| 0.79 kB/s >>>>>>>>>>>>>>>>>>>| [  71/  71] timer.erl
+| 1.56 kB/s >>>>>>>>>>>>>>>>>>>| [  28/  28] unicode.erl
+| 0.90 kB/s >>>>>>>>>>>>>>>>>>>| [  76/  76] win32reg.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [ 166/ 166] zip.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/syntax_tools/src
+| 0.82 kB/s >>>>>>>>>>>>>>>>>>>| [  76/  76] epp_dodger.erl
+| 0.85 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] erl_comment_scan.erl
+| 0.60 kB/s >>>>>>>>>>>>>>>>>>>| [  85/  85] erl_prettypr.erl
+| 0.67 kB/s >>>>>>>>>>>>>>>>>>>| [  65/  65] erl_recomment.erl
+| 1.16 kB/s >>>>>>>>>>>>>>>>>>>| [ 579/ 579] erl_syntax.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [ 180/ 180] erl_syntax_lib.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [ 150/ 150] erl_tidy.erl
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [ 192/ 192] igor.erl
+| 1.15 kB/s >>>>>>>>>>>>>>>>>>>| [  91/  91] prettypr.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/test_server/src
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] erl2html2.erl
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [ 141/ 141] test_server.erl
+| 1.30 kB/s >>>>>>>>>>>>>>>>>>>| [ 299/ 299] test_server_ctrl.erl
+| 0.63 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] test_server_h.erl
+| 1.45 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] test_server_line.erl
+| 1.13 kB/s >>>>>>>>>>>>>>>>>>>| [  62/  62] test_server_node.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [  52/  52] test_server_sup.erl
+| 0.64 kB/s >>>>>>>>>>>>>>>>>>>| [  24/  24] distr_startup_SUITE.erl
+| 0.55 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] mnesia_power_SUITE.erl
+| 0.53 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] random_kill_SUITE.erl
+| 0.70 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] verify.erl
+| 0.92 kB/s >>>>>>>>>>>>>>>>>>>| [  56/  56] ts.erl
+| 0.84 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] ts_autoconf_vxworks.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [  18/  18] ts_autoconf_win32.erl
+| 1.12 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] ts_erl_config.erl
+| 0.71 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] ts_install.erl
+| 0.94 kB/s >>>>>>>>>>>>>>>>>>>| [  33/  33] ts_lib.erl
+| 0.86 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] ts_make.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [  44/  44] ts_reports.erl
+| 1.11 kB/s >>>>>>>>>>>>>>>>>>>| [  49/  49] ts_run.erl
+| 0.71 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] ts_selftest.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] vxworks_client.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/tools/src
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [ 167/ 167] cover.erl
+| 1.20 kB/s >>>>>>>>>>>>>>>>>>>| [  93/  93] cover_web.erl
+| 0.35 kB/s >>>>>>>>>>>>>>>>>>>| [  25/  25] cprof.erl
+| 0.64 kB/s >>>>>>>>>>>>>>>>>>>| [  58/  58] eprof.erl
+| 1.22 kB/s >>>>>>>>>>>>>>>>>>>| [ 148/ 148] fprof.erl
+| 1.02 kB/s >>>>>>>>>>>>>>>>>>>| [  29/  29] instrument.erl
+| 0.71 kB/s >>>>>>>>>>>>>>>>>>>| [ 109/ 109] lcnt.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  30/  30] make.erl
+| 0.49 kB/s >>>>>>>>>>>>>>>>>>>| [  38/  38] tags.erl
+| 0.62 kB/s >>>>>>>>>>>>>>>>>>>| [  62/  62] xref.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [ 149/ 149] xref_base.erl
+| 1.15 kB/s >>>>>>>>>>>>>>>>>>>| [  75/  75] xref_compiler.erl
+| 1.06 kB/s >>>>>>>>>>>>>>>>>>>| [ 404/ 404] xref_parser.erl
+| 1.08 kB/s >>>>>>>>>>>>>>>>>>>| [  26/  26] xref_reader.erl
+| 1.87 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] xref_scanner.erl
+| 0.96 kB/s >>>>>>>>>>>>>>>>>>>| [  75/  75] xref_utils.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/typer/src
+| 0.99 kB/s >>>>>>>>>>>>>>>>>>>| [  20/  20] typer.erl
+| 0.92 kB/s >>>>>>>>>>>>>>>>>>>| [  35/  35] typer_annotator.erl
+| 2.08 kB/s >>>>>>>>>>>>>>>>>>>| [  12/  12] typer_info.erl
+| 1.72 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] typer_map.erl
+| 1.73 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] typer_options.erl
+| 1.00 kB/s >>>>>>>>>>>>>>>>>>>| [  23/  23] typer_preprocess.erl
+Adding: /Users/olahgabor/Documents/git/refactorerl/otp_src_R13B04/lib/xmerl/src
+| 0.72 kB/s >>>>>>>>>>>>>>>>>>>| [  22/  22] xmerl.erl
+| 0.78 kB/s >>>>>>>>>>>>>>>>>>>| [  90/  90] xmerl_b64Bin.erl
+| 1.07 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] xmerl_b64Bin_scan.erl
+| 2.03 kB/s >>>>>>>>>>>>>>>>>>>| [   1/   1] xmerl_dtd.erl
+| 0.80 kB/s >>>>>>>>>>>>>>>>>>>| [  31/  31] xmerl_eventp.erl
+| 0.46 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] xmerl_html.erl
+| 1.62 kB/s >>>>>>>>>>>>>>>>>>>| [  65/  65] xmerl_lib.erl
+| 0.95 kB/s >>>>>>>>>>>>>>>>>>>| [  15/  15] xmerl_otpsgml.erl
+| 0.92 kB/s >>>>>>>>>>>>>>>>>>>| [ 117/ 117] xmerl_regexp.erl
+| 1.55 kB/s >>>>>>>>>>>>>>>>>>>| [  14/  14] xmerl_sax_old_dom.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] xmerl_sax_parser.erl
+| 2.03 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] xmerl_sax_parser_latin1.erl
+| 2.07 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] xmerl_sax_parser_list.erl
+| 1.98 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] xmerl_sax_parser_utf16be.erl
+| 1.95 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] xmerl_sax_parser_utf16le.erl
+| 1.94 kB/s >>>>>>>>>>>>>>>>>>>| [ 132/ 132] xmerl_sax_parser_utf8.erl
+| 1.51 kB/s >>>>>>>>>>>>>>>>>>>| [  13/  13] xmerl_sax_simple_dom.erl
+| 1.23 kB/s >>>>>>>>>>>>>>>>>>>| [ 216/ 216] xmerl_scan.erl
+| 0.43 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] xmerl_sgml.erl
+| 0.83 kB/s >>>>>>>>>>>>>>>>>>>| [  11/  11] xmerl_simple.erl
+| 0.29 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] xmerl_text.erl
+| 0.97 kB/s >>>>>>>>>>>>>>>>>>>| [  57/  57] xmerl_ucs.erl
+| 0.91 kB/s >>>>>>>>>>>>>>>>>>>| [  42/  42] xmerl_uri.erl
+| 1.17 kB/s >>>>>>>>>>>>>>>>>>>| [  36/  36] xmerl_validate.erl
+| 0.43 kB/s >>>>>>>>>>>>>>>>>>>| [   6/   6] xmerl_xlate.erl
+| 0.50 kB/s >>>>>>>>>>>>>>>>>>>| [   9/   9] xmerl_xml.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [  54/  54] xmerl_xpath.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [   7/   7] xmerl_xpath_lib.erl
+| 1.40 kB/s >>>>>>>>>>>>>>>>>>>| [ 302/ 302] xmerl_xpath_parse.erl
+| 0.72 kB/s >>>>>>>>>>>>>>>>>>>| [  78/  78] xmerl_xpath_pred.erl
+| 1.14 kB/s >>>>>>>>>>>>>>>>>>>| [  21/  21] xmerl_xpath_scan.erl
+| 0.47 kB/s >>>>>>>>>>>>>>>>>>>| [   8/   8] xmerl_xs.erl
+| 1.37 kB/s >>>>>>>>>>>>>>>>>>>| [ 330/ 330] xmerl_xsd.erl
+| 0.98 kB/s >>>>>>>>>>>>>>>>>>>| [ 115/ 115] xmerl_xsd_type.erl
+[ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,
+ ok,ok,ok,error,ok,ok,ok,ok,ok,ok|...]
+(refactorerl@localhost)67> q().
+ok
+(refactorerl@localhost)68> Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
+Olikass-MacBook-Air:refactorerl-0.9.14.09 olahgabor$
